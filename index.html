@@ -1051,8 +1051,13 @@ footer {
   .hero-bg .orbit,
   .cta-bg-mark { animation: none; }
 
-  /* sticky elements ghost on iOS during fast scroll */
+  /* sticky elements ghost on iOS during fast scroll AND overlap stacked content */
+  .concept-visual,
   .org-sidebar { position: static; top: auto; }
+
+  /* shrink decorative visuals when stacked so they don't dominate the screen */
+  .concept-visual svg { max-width: 220px; }
+  .org-sidebar-mark { width: 60px; height: 60px; margin-bottom: 1.2rem; }
 
   /* keep fixed nav and decorative bg on their own GPU layers so repaint is clean */
   .nav,
