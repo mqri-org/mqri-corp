@@ -1041,6 +1041,32 @@ footer {
 .mqri-mark { stroke: currentColor; fill: none; stroke-width: 0.78; stroke-miterlimit: 10; }
 .mqri-text { fill: currentColor; }
 
+/* ───────────── MOBILE: iOS Safari paint artifact fixes ───────────── */
+@media (max-width: 768px) {
+  /* fixed-position overlays with mix-blend-mode leave ghost trails on iOS scroll */
+  body::before,
+  body::after { display: none; }
+
+  /* infinite SVG rotations churn composite layers — freeze on mobile */
+  .hero-bg .orbit,
+  .cta-bg-mark { animation: none; }
+
+  /* sticky elements ghost on iOS during fast scroll */
+  .org-sidebar { position: static; top: auto; }
+
+  /* keep fixed nav and decorative bg on their own GPU layers so repaint is clean */
+  .nav,
+  .hero-bg,
+  .cta-bg-mark {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    isolation: isolate;
+  }
+
+  /* clip every section so absolutely positioned children can't bleed past during scroll */
+  section { overflow: hidden; }
+}
+
 </style>
 </head>
 <body>
