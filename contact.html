@@ -794,6 +794,30 @@ footer {
   transform: translateY(0);
 }
 
+/* ───────────── MOBILE: iOS Safari paint artifact fixes ───────────── */
+@media (max-width: 768px) {
+  /* fixed-position overlays with mix-blend-mode leave ghost trails on iOS scroll */
+  body::before,
+  body::after { display: none; }
+
+  /* infinite SVG rotation churns composite layers — freeze on mobile */
+  .contact-hero-bg .orbit { animation: none; }
+
+  /* sticky elements ghost on iOS during fast scroll */
+  .contact-info { position: static; top: auto; }
+
+  /* keep fixed nav and decorative bg on their own GPU layers so repaint is clean */
+  .nav,
+  .contact-hero-bg {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    isolation: isolate;
+  }
+
+  /* clip hero so the off-screen bg orb can't bleed past during scroll */
+  .contact-hero { overflow: hidden; }
+}
+
 </style>
 </head>
 <body>
