@@ -896,7 +896,7 @@ footer {
           <div class="info-label">Direct</div>
           <div class="info-content">
             メールでのご連絡は<br>
-            <a href="mailto:contact@mqri.jp" class="mono">contact@mqri.jp</a><br>
+            <a href="mailto:info@mqri.or.jp" class="mono">info@mqri.or.jp</a><br>
             <span class="small">フォームのご利用を推奨しています。</span>
           </div>
         </div>
@@ -910,7 +910,11 @@ footer {
           <span class="required-note"><span class="req">*</span> 印は必須項目です</span>
         </div>
 
-        <form id="contactForm" novalidate>
+        <form id="contactForm" action="https://formspree.io/f/mwvzpzgp" method="POST" novalidate>
+
+          <!-- Formspree: 件名・honeypot (人間には不可視) -->
+          <input type="hidden" name="_subject" value="MQRIサイトお問い合わせ">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
 
           <!-- カテゴリ -->
           <div class="field-group">
@@ -1042,7 +1046,8 @@ footer {
             <input type="checkbox" id="agree" name="agree" required>
             <span class="check-label">
               ご記入いただいた情報の取り扱いについて同意します。<br>
-              お預かりした個人情報は、ご返信およびご相談対応の目的にのみ使用し、第三者への提供はいたしません。
+              お預かりした個人情報は、ご返信およびご相談対応の目的にのみ使用し、目的外の第三者提供はいたしません。<br>
+              <span class="small">※ フォームの送信処理には外部サービス Formspree（formspree.io）を利用しています。</span>
             </span>
           </label>
 
@@ -1153,13 +1158,33 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Form submission (demo)
+// Form submission (Formspree)
 const form = document.getElementById('contactForm');
 const formIntro = document.getElementById('formIntro');
 const success = document.getElementById('formSuccess');
+const submitBtn = form.querySelector('.btn-submit');
+const submitBtnHTML = submitBtn.innerHTML;
 
-form.addEventListener('submit', (e) => {
+function showError(msg) {
+  let el = document.getElementById('formError');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'formError';
+    el.setAttribute('role', 'alert');
+    el.style.cssText = 'margin-top:1.25rem;padding:1rem 1.2rem;background:rgba(180,40,40,0.06);border:1px solid rgba(180,40,40,0.35);color:#9a2a2a;border-radius:4px;font-size:0.92rem;line-height:1.7;';
+    form.querySelector('.form-submit').appendChild(el);
+  }
+  el.innerHTML = msg;
+}
+
+function clearError() {
+  const el = document.getElementById('formError');
+  if (el) el.remove();
+}
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  clearError();
 
   // Basic validation
   const category = form.querySelector('input[name="category"]:checked');
@@ -1169,7 +1194,6 @@ form.addEventListener('submit', (e) => {
   const agree = form.agree.checked;
 
   if (!category || !name || !email || !message || !agree) {
-    // Find first missing field and focus
     if (!category) {
       document.querySelector('.category-grid').scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else if (!name) {
@@ -1184,14 +1208,44 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
-  // In production: send to endpoint
-  // fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+  // Subject に用件カテゴリを付与
+  form._subject.value = 'MQRIサイトお問い合わせ ／ ' + category.value;
 
-  // Show success state
-  form.style.display = 'none';
-  formIntro.style.display = 'none';
-  success.classList.add('visible');
-  window.scrollTo({ top: success.offsetTop - 100, behavior: 'smooth' });
+  // ローディングUI
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>送信中...</span>';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.style.display = 'none';
+      formIntro.style.display = 'none';
+      success.classList.add('visible');
+      window.scrollTo({ top: success.offsetTop - 100, behavior: 'smooth' });
+      return;
+    }
+
+    let detail = '';
+    try {
+      const data = await res.json();
+      if (data && Array.isArray(data.errors) && data.errors.length) {
+        detail = data.errors.map(err => err.message).join(' / ');
+      }
+    } catch (_) {}
+    throw new Error(detail || ('HTTP ' + res.status));
+  } catch (err) {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = submitBtnHTML;
+    showError(
+      '送信に失敗しました。お手数ですが、しばらく時間をおいて再度お試しいただくか、' +
+      '<a href="mailto:info@mqri.or.jp" style="color:inherit;text-decoration:underline;">info@mqri.or.jp</a> までメールにてご連絡ください。'
+    );
+  }
 });
 </script>
 
