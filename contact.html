@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact ／ MQRI 一般社団法人 松石量子再生研究所</title>
+<meta name="description" content="MQRIへのお問い合わせ。共創・協賛・取材・講演・その他のご相談を承ります。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1815;
+  --ink-soft: #3a342e;
+  --ink-mute: #6b6359;
+  --paper: #f4f0e8;
+  --paper-warm: #ebe5d7;
+  --paper-deep: #e3dcc9;
+  --indigo: #1f2d4a;
+  --indigo-deep: #0e1729;
+  --silver: #b8b3a6;
+  --silver-light: #d4cfc0;
+  --gold: #8a7548;
+  --line: rgba(26, 24, 21, 0.12);
+  --line-soft: rgba(26, 24, 21, 0.06);
+  --error: #8b3a3a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Shippori Mincho", "Noto Serif JP", "Cormorant Garamond", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.85;
+  font-weight: 300;
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.04em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Paper texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(138, 117, 72, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(31, 45, 74, 0.02) 0%, transparent 50%);
+  opacity: 0.8;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  z-index: 3;
+}
+
+/* ───────────── NAV ───────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.4rem 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(244, 240, 232, 0.78);
+  border-bottom: 1px solid var(--line-soft);
+  transition: all 0.4s ease;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-logo-mark { width: 26px; height: 26px; }
+
+.nav-logo-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.35em;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.nav-menu {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.6rem);
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 0.35s ease;
+}
+
+.nav-menu a:hover { color: var(--ink); }
+.nav-menu a:hover::after { width: 100%; }
+
+.nav-cta {
+  padding: 0.55rem 1.3rem;
+  border: 1px solid var(--ink);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+.nav-cta::after { display: none !important; }
+
+@media (max-width: 768px) {
+  .nav-menu li:not(:last-child) { display: none; }
+}
+
+.mqri-mark { stroke: currentColor; fill: none; stroke-width: 0.78; stroke-miterlimit: 10; }
+
+/* ───────────── HERO ───────────── */
+.contact-hero {
+  padding: 12rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero-bg {
+  position: absolute;
+  top: 50%;
+  right: -15%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-hero-bg svg { width: 100%; height: 100%; }
+
+.contact-hero-bg .orbit {
+  transform-origin: 50% 50%;
+  animation: rotate 80s linear infinite;
+}
+
+.contact-hero-bg .orbit-2 { animation-duration: 120s; animation-direction: reverse; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.5em;
+  color: var(--ink-mute);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-style: italic;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: var(--ink-mute);
+}
+
+.contact-hero h1 {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.contact-hero .lead {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 2.2;
+  color: var(--ink-soft);
+  max-width: 640px;
+  position: relative;
+  z-index: 3;
+}
+
+/* ───────────── MAIN GRID ───────────── */
+.contact-main {
+  padding: 4rem 0 8rem;
+  position: relative;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ─── INFO COLUMN (LEFT) ─── */
+.contact-info {
+  position: sticky;
+  top: 7rem;
+}
+
+.info-block {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-block:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.info-content {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1rem;
+  line-height: 2.1;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+
+.info-content .mono {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.06em;
+}
+
+.info-content a {
+  color: var(--indigo);
+  text-decoration: none;
+  border-bottom: 1px solid var(--silver);
+  transition: border-color 0.3s;
+}
+
+.info-content a:hover {
+  border-bottom-color: var(--indigo);
+}
+
+.info-content .small {
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+  margin-top: 0.4rem;
+  letter-spacing: 0.08em;
+}
+
+/* ─── FORM (RIGHT) ─── */
+.form-wrap {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--line);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  position: relative;
+}
+
+.form-wrap::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid var(--indigo);
+  border-left: 2px solid var(--indigo);
+}
+
+.form-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 40px;
+  height: 40px;
+  border-bottom: 2px solid var(--indigo);
+  border-right: 2px solid var(--indigo);
+}
+
+.form-intro {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-intro h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.form-intro p {
+  font-size: 0.9rem;
+  line-height: 2;
+  color: var(--ink-soft);
+}
+
+.form-intro .required-note {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-mute);
+  margin-top: 1rem;
+  display: block;
+}
+
+.form-intro .required-note .req {
+  color: var(--gold);
+}
+
+/* ─── FIELD GROUPS ─── */
+.field-group {
+  margin-bottom: 2.2rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .field-row { grid-template-columns: 1fr; gap: 2.2rem; }
+}
+
+label.field-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.field-label .req {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.field-label .en {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-left: auto;
+}
+
+/* ─── INPUTS ─── */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.95rem 0.2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.98rem;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  transition: border-color 0.3s;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--silver);
+  font-style: italic;
+  font-family: "Cormorant Garamond", "Shippori Mincho", serif;
+  letter-spacing: 0.06em;
+  font-weight: 300;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-bottom-color: var(--indigo);
+}
+
+textarea {
+  min-height: 180px;
+  resize: vertical;
+  padding: 0.95rem 0.2rem;
+  line-height: 1.95;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%231a1815' stroke-width='1' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.3rem center;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+/* ─── CATEGORY RADIO PILLS ─── */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.category-pill {
+  position: relative;
+}
+
+.category-pill input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.category-pill label {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.category-pill label:hover {
+  border-color: var(--ink);
+  background: var(--paper-warm);
+}
+
+.category-pill input[type="radio"]:checked + label {
+  border-color: var(--indigo);
+  background: var(--paper-warm);
+  box-shadow: inset 0 0 0 1px var(--indigo);
+}
+
+.category-pill input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 6px;
+  height: 6px;
+  background: var(--indigo);
+  border-radius: 50%;
+}
+
+.category-pill .cat-en {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.category-pill .cat-jp {
+  display: block;
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+
+.category-pill .cat-desc {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+  margin-top: 0.3rem;
+  line-height: 1.6;
+}
+
+/* ─── CHECKBOX ─── */
+.checkbox-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+
+.checkbox-wrap input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  transition: all 0.2s;
+  border-radius: 0;
+}
+
+.checkbox-wrap input[type="checkbox"]:checked {
+  background: var(--ink);
+}
+
+.checkbox-wrap input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--paper);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-wrap .check-label {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.checkbox-wrap .check-label a {
+  color: var(--indigo);
+  text-decoration: none;
+  border-bottom: 1px solid var(--silver);
+}
+
+/* ─── SUBMIT ─── */
+.form-submit {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 2.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-weight: 400;
+}
+
+.btn-submit:hover {
+  background: var(--indigo);
+  border-color: var(--indigo);
+  transform: translateY(-2px);
+  letter-spacing: 0.35em;
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-submit .arrow {
+  font-family: "Cormorant Garamond", serif;
+  transition: transform 0.3s;
+}
+
+.btn-submit:hover .arrow {
+  transform: translateX(4px);
+}
+
+.submit-note {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-mute);
+}
+
+/* ─── SUCCESS STATE ─── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.form-success.visible { display: block; }
+
+.form-success svg {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  color: var(--indigo);
+  animation: rotate 30s linear infinite;
+}
+
+.form-success h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+
+.form-success p {
+  font-size: 0.95rem;
+  line-height: 2.1;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  color: var(--silver-light);
+  padding: 5rem 0 2rem;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.footer-brand h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  font-weight: 400;
+  color: var(--paper);
+  margin-bottom: 0.6rem;
+}
+
+.footer-brand .ja {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: var(--silver-light);
+  margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 2;
+  color: var(--silver);
+  max-width: 320px;
+}
+
+.footer-col h5 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  color: var(--silver);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.8rem; }
+.footer-col a {
+  color: var(--silver-light);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--paper); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(244, 240, 232, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--silver);
+}
+
+.footer-bottom .copy {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+
+/* ─── REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 15.5 15.5" xmlns="http://www.w3.org/2000/svg" style="color: var(--ink);">
+        <g class="mqri-mark">
+          <path d="M11.43,4.07c0,2.03-1.65,3.68-3.68,3.68,0-2.03-1.65-3.68-3.68-3.68S.44,5.67.39,7.66C.44,3.67,3.67.44,7.65.39c.03,0,.06,0,.09,0s.06,0,.09,0c1.99.05,3.59,1.68,3.59,3.68Z"/>
+          <path d="M15.11,7.85c-.05,3.99-3.27,7.21-7.26,7.26-.03,0-.06,0-.09,0s-.06,0-.09,0c-1.99-.05-3.59-1.68-3.59-3.68s1.65-3.68,3.68-3.68c0,2.03,1.65,3.68,3.68,3.68s3.63-1.6,3.68-3.59Z"/>
+          <path d="M7.65,15.11c-3.99-.05-7.21-3.27-7.26-7.26,0-.03,0-.06,0-.09s0-.06,0-.09c.05-1.99,1.68-3.59,3.68-3.59s3.68,1.65,3.68,3.68c-2.03,0-3.68,1.65-3.68,3.68s1.6,3.63,3.59,3.68Z"/>
+          <path d="M15.11,7.75s0,.06,0,.09c-.05,1.99-1.68,3.59-3.68,3.59s-3.68-1.65-3.68-3.68c2.03,0,3.68-1.65,3.68-3.68S9.83.44,7.84.39c3.99.05,7.21,3.27,7.26,7.26,0,.03,0,.06,0,.09Z"/>
+        </g>
+      </svg>
+      <span class="nav-logo-text">MORI</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="/#concept">CONCEPT</a></li>
+      <li><a href="/#regen">REGENERATION</a></li>
+      <li><a href="/#structure">STRUCTURE</a></li>
+      <li><a href="/#organization">ORGANIZATION</a></li>
+      <li><a href="contact.html" class="nav-cta">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="contact-hero">
+  <div class="contact-hero-bg" aria-hidden="true">
+    <svg viewBox="-150 -150 300 300" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#1f2d4a" fill="none" stroke-width="0.4">
+        <g class="orbit">
+          <circle cx="0" cy="-40" r="55" />
+          <circle cx="40" cy="0" r="55" />
+          <circle cx="0" cy="40" r="55" />
+          <circle cx="-40" cy="0" r="55" />
+        </g>
+        <g class="orbit orbit-2" opacity="0.6">
+          <circle cx="0" cy="-60" r="80" />
+          <circle cx="60" cy="0" r="80" />
+          <circle cx="0" cy="60" r="80" />
+          <circle cx="-60" cy="0" r="80" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-eyebrow">Get in touch</div>
+    <h1>めぐりの<br>はじまりに、<br>お声がけください。</h1>
+    <p class="lead">
+      共創、協賛、研究連携、メディア取材、講演・登壇のご依頼まで。<br>
+      MQRIへのお問い合わせは、こちらのフォームよりお願いいたします。
+    </p>
+  </div>
+</section>
+
+<!-- ============ MAIN ============ -->
+<section class="contact-main">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- ─── INFO COLUMN ─── -->
+      <aside class="contact-info">
+        <div class="info-block">
+          <div class="info-label">Organization</div>
+          <div class="info-content">
+            非営利組織<br>
+            一般社団法人<br>
+            松石量子再生研究所<br>
+            <span class="small mono">Matsuishi Quantum Regeneration Institute</span>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Address</div>
+          <div class="info-content">
+            <span class="mono">〒819-1561</span><br>
+            福岡県糸島市曽根字中 391番53<br>
+            <span class="small">糸島本社 研究Field</span>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Response Time</div>
+          <div class="info-content">
+            通常 <span class="mono">3〜5</span> 営業日以内に<br>
+            ご返信いたします。<br>
+            <span class="small">内容により前後する場合があります。</span>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Direct</div>
+          <div class="info-content">
+            メールでのご連絡は<br>
+            <a href="mailto:contact@mqri.jp" class="mono">contact@mqri.jp</a><br>
+            <span class="small">フォームのご利用を推奨しています。</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ─── FORM COLUMN ─── -->
+      <div class="form-wrap">
+        <div class="form-intro" id="formIntro">
+          <h2>お問い合わせフォーム</h2>
+          <p>必要事項をご記入のうえ、お送りください。お預かりした内容は、ご返信およびご相談以外の目的では使用いたしません。</p>
+          <span class="required-note"><span class="req">*</span> 印は必須項目です</span>
+        </div>
+
+        <form id="contactForm" novalidate>
+
+          <!-- カテゴリ -->
+          <div class="field-group">
+            <label class="field-label">
+              ご用件 <span class="req">*</span>
+              <span class="en">Category</span>
+            </label>
+            <div class="category-grid">
+              <div class="category-pill">
+                <input type="radio" id="cat-cocreate" name="category" value="cocreate" required>
+                <label for="cat-cocreate">
+                  <span class="cat-en">Co-creation</span>
+                  <span class="cat-jp">共創 ／ 連携</span>
+                  <span class="cat-desc">共同プロジェクト、研究連携</span>
+                </label>
+              </div>
+              <div class="category-pill">
+                <input type="radio" id="cat-sponsor" name="category" value="sponsor">
+                <label for="cat-sponsor">
+                  <span class="cat-en">Sponsorship</span>
+                  <span class="cat-jp">協賛 ／ 寄付</span>
+                  <span class="cat-desc">REGEN Partner、法人協賛</span>
+                </label>
+              </div>
+              <div class="category-pill">
+                <input type="radio" id="cat-media" name="category" value="media">
+                <label for="cat-media">
+                  <span class="cat-en">Media</span>
+                  <span class="cat-jp">メディア取材</span>
+                  <span class="cat-desc">取材、寄稿、出演依頼</span>
+                </label>
+              </div>
+              <div class="category-pill">
+                <input type="radio" id="cat-talk" name="category" value="talk">
+                <label for="cat-talk">
+                  <span class="cat-en">Speaking</span>
+                  <span class="cat-jp">講演 ／ 登壇</span>
+                  <span class="cat-desc">講演、登壇、ワークショップ</span>
+                </label>
+              </div>
+              <div class="category-pill">
+                <input type="radio" id="cat-event" name="category" value="event">
+                <label for="cat-event">
+                  <span class="cat-en">Event</span>
+                  <span class="cat-jp">イベント参加</span>
+                  <span class="cat-desc">REGEN DAY、見学希望</span>
+                </label>
+              </div>
+              <div class="category-pill">
+                <input type="radio" id="cat-other" name="category" value="other">
+                <label for="cat-other">
+                  <span class="cat-en">Other</span>
+                  <span class="cat-jp">その他</span>
+                  <span class="cat-desc">上記以外のお問い合わせ</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- お名前 / 法人名 -->
+          <div class="field-group">
+            <div class="field-row">
+              <div>
+                <label class="field-label" for="name">
+                  お名前 <span class="req">*</span>
+                  <span class="en">Name</span>
+                </label>
+                <input type="text" id="name" name="name" placeholder="松石 太郎" required>
+              </div>
+              <div>
+                <label class="field-label" for="company">
+                  法人名 ／ 所属
+                  <span class="en">Organization</span>
+                </label>
+                <input type="text" id="company" name="company" placeholder="株式会社○○ ／ 個人">
+              </div>
+            </div>
+          </div>
+
+          <!-- 連絡先 -->
+          <div class="field-group">
+            <div class="field-row">
+              <div>
+                <label class="field-label" for="email">
+                  メールアドレス <span class="req">*</span>
+                  <span class="en">Email</span>
+                </label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+              </div>
+              <div>
+                <label class="field-label" for="tel">
+                  お電話番号
+                  <span class="en">Tel</span>
+                </label>
+                <input type="tel" id="tel" name="tel" placeholder="090-0000-0000">
+              </div>
+            </div>
+          </div>
+
+          <!-- ご紹介経路 -->
+          <div class="field-group">
+            <label class="field-label" for="source">
+              MQRIをお知りになったきっかけ
+              <span class="en">Source</span>
+            </label>
+            <select id="source" name="source">
+              <option value="">選択してください（任意）</option>
+              <option value="web">ウェブ検索</option>
+              <option value="sns">SNS</option>
+              <option value="event">イベント参加</option>
+              <option value="referral">ご紹介</option>
+              <option value="media">メディア掲載</option>
+              <option value="podcast">REGEN RADIO</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <!-- お問い合わせ内容 -->
+          <div class="field-group">
+            <label class="field-label" for="message">
+              お問い合わせ内容 <span class="req">*</span>
+              <span class="en">Message</span>
+            </label>
+            <textarea id="message" name="message" placeholder="ご相談内容、ご希望のスケジュールや規模感など、わかる範囲でお書きください。" required></textarea>
+          </div>
+
+          <!-- 同意 -->
+          <label class="checkbox-wrap">
+            <input type="checkbox" id="agree" name="agree" required>
+            <span class="check-label">
+              ご記入いただいた情報の取り扱いについて同意します。<br>
+              お預かりした個人情報は、ご返信およびご相談対応の目的にのみ使用し、第三者への提供はいたしません。
+            </span>
+          </label>
+
+          <!-- 送信 -->
+          <div class="form-submit">
+            <button type="submit" class="btn-submit">
+              <span>送信する</span>
+              <span class="arrow">→</span>
+            </button>
+            <span class="submit-note">— Thank you for reaching out —</span>
+          </div>
+        </form>
+
+        <!-- 送信完了 -->
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 15.5 15.5" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="currentColor" fill="none" stroke-width="0.5" stroke-miterlimit="10">
+              <path d="M11.43,4.07c0,2.03-1.65,3.68-3.68,3.68,0-2.03-1.65-3.68-3.68-3.68S.44,5.67.39,7.66C.44,3.67,3.67.44,7.65.39c.03,0,.06,0,.09,0s.06,0,.09,0c1.99.05,3.59,1.68,3.59,3.68Z"/>
+              <path d="M15.11,7.85c-.05,3.99-3.27,7.21-7.26,7.26-.03,0-.06,0-.09,0s-.06,0-.09,0c-1.99-.05-3.59-1.68-3.59-3.68s1.65-3.68,3.68-3.68c0,2.03,1.65,3.68,3.68,3.68s3.63-1.6,3.68-3.59Z"/>
+              <path d="M7.65,15.11c-3.99-.05-7.21-3.27-7.26-7.26,0-.03,0-.06,0-.09s0-.06,0-.09c.05-1.99,1.68-3.59,3.68-3.59s3.68,1.65,3.68,3.68c-2.03,0-3.68,1.65-3.68,3.68s1.6,3.63,3.59,3.68Z"/>
+              <path d="M15.11,7.75s0,.06,0,.09c-.05,1.99-1.68,3.59-3.68,3.59s-3.68-1.65-3.68-3.68c2.03,0,3.68-1.65,3.68-3.68S9.83.44,7.84.39c3.99.05,7.21,3.27,7.26,7.26,0,.03,0,.06,0,.09Z"/>
+            </g>
+          </svg>
+          <h3>送信いたしました</h3>
+          <p>お問い合わせありがとうございます。<br>内容を確認のうえ、3〜5営業日以内にご返信いたします。<br>めぐりのはじまりに、感謝を込めて。</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>MORI</h4>
+        <div class="ja">一般社団法人 松石量子再生研究所</div>
+        <p>量子からはじまる、未来世代のための再生循環。人の内側の調和から、自然・地域・社会の再生を実装する非営利研究機関。</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Activities</h5>
+        <ul>
+          <li><a href="/#regen">Inner Regeneration</a></li>
+          <li><a href="/#regen">Nature Regeneration</a></li>
+          <li><a href="/#regen">Community Regeneration</a></li>
+          <li><a href="/#regen">Capital Regeneration</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Brands</h5>
+        <ul>
+          <li><a href="/#structure">REGEN</a></li>
+          <li><a href="/#structure">八百万の蜂プロジェクト</a></li>
+          <li><a href="/#structure">ABC</a></li>
+          <li><a href="/#organization">Organization</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>一般社団法人 松石量子再生研究所 ／ 福岡・糸島</p>
+      <p class="copy">© MMXXVI MQRI. All quanta in circulation.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.info-block, .form-wrap, .contact-hero h1, .contact-hero .lead').forEach(el => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+
+// Nav background on scroll
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(244, 240, 232, 0.92)';
+    nav.style.boxShadow = '0 1px 0 rgba(26, 24, 21, 0.08)';
+  } else {
+    nav.style.background = 'rgba(244, 240, 232, 0.78)';
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// Form submission (demo)
+const form = document.getElementById('contactForm');
+const formIntro = document.getElementById('formIntro');
+const success = document.getElementById('formSuccess');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Basic validation
+  const category = form.querySelector('input[name="category"]:checked');
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+  const agree = form.agree.checked;
+
+  if (!category || !name || !email || !message || !agree) {
+    // Find first missing field and focus
+    if (!category) {
+      document.querySelector('.category-grid').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else if (!name) {
+      form.name.focus();
+    } else if (!email) {
+      form.email.focus();
+    } else if (!message) {
+      form.message.focus();
+    } else if (!agree) {
+      form.agree.focus();
+    }
+    return;
+  }
+
+  // In production: send to endpoint
+  // fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+
+  // Show success state
+  form.style.display = 'none';
+  formIntro.style.display = 'none';
+  success.classList.add('visible');
+  window.scrollTo({ top: success.offsetTop - 100, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
