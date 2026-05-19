@@ -892,14 +892,6 @@ footer {
           </div>
         </div>
 
-        <div class="info-block">
-          <div class="info-label">Direct</div>
-          <div class="info-content">
-            メールでのご連絡は<br>
-            <a href="mailto:info@mqri.or.jp" class="mono">info@mqri.or.jp</a><br>
-            <span class="small">フォームのご利用を推奨しています。</span>
-          </div>
-        </div>
       </aside>
 
       <!-- ─── FORM COLUMN ─── -->
@@ -1242,8 +1234,7 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = false;
     submitBtn.innerHTML = submitBtnHTML;
     showError(
-      '送信に失敗しました。お手数ですが、しばらく時間をおいて再度お試しいただくか、' +
-      '<a href="mailto:info@mqri.or.jp" style="color:inherit;text-decoration:underline;">info@mqri.or.jp</a> までメールにてご連絡ください。'
+      '送信に失敗しました。お手数ですが、しばらく時間をおいてから再度お試しください。'
     );
   }
 });
