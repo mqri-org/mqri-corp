@@ -1,0 +1,589 @@
+/* ============================================================
+   MQRI News — shared styles for /news/* pages
+   Base / Nav / Footer chunks should stay in sync with
+   the inline <style> in index.html and contact.html.
+   ============================================================ */
+
+:root {
+  --ink: #1a1815;
+  --ink-soft: #3a342e;
+  --ink-mute: #6b6359;
+  --paper: #f4f0e8;
+  --paper-warm: #ebe5d7;
+  --paper-deep: #e3dcc9;
+  --indigo: #1f2d4a;
+  --indigo-deep: #0e1729;
+  --silver: #b8b3a6;
+  --silver-light: #d4cfc0;
+  --gold: #8a7548;
+  --line: rgba(26, 24, 21, 0.12);
+  --line-soft: rgba(26, 24, 21, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Shippori Mincho", "Noto Serif JP", "Cormorant Garamond", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.85;
+  font-weight: 300;
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.04em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(138, 117, 72, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(31, 45, 74, 0.02) 0%, transparent 50%);
+  opacity: 0.8;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  z-index: 3;
+}
+
+/* ───────────── NAV ───────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.4rem 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(244, 240, 232, 0.78);
+  border-bottom: 1px solid var(--line-soft);
+  transition: all 0.4s ease;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-logo-svg {
+  height: 22px;
+  width: auto;
+  display: block;
+  color: var(--ink);
+}
+
+.nav-menu {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.6rem);
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 0.35s ease;
+}
+
+.nav-menu a:hover { color: var(--ink); }
+.nav-menu a:hover::after { width: 100%; }
+
+.nav-menu a.nav-cta {
+  padding: 0.7rem 1.6rem;
+  border: 1px solid var(--ink);
+  font-family: "Cormorant Garamond", "Shippori Mincho", serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.nav-menu a.nav-cta:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.nav-menu a.nav-cta::after { display: none; }
+
+@media (max-width: 768px) {
+  .nav-menu li:not(:last-child) { display: none; }
+}
+
+/* ───────────── NEWS LIST (news/index.html) ───────────── */
+.news-list-hero {
+  padding: 11rem 0 3rem;
+  position: relative;
+}
+
+.news-list-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.5em;
+  color: var(--ink-mute);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.news-list-eyebrow::before {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: var(--ink-mute);
+}
+
+.news-list-hero h1 {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.news-list-hero .lead {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 2.2;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+.news-list-main {
+  padding: 3rem 0 8rem;
+}
+
+.news-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-list-item {
+  display: grid;
+  grid-template-columns: 180px 120px 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.25s, padding-left 0.25s;
+}
+
+.news-list-item:hover {
+  background: rgba(255, 255, 255, 0.35);
+  padding-left: 1rem;
+}
+
+.news-list-item .date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+}
+
+.news-list-item .category {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--ink-mute);
+  color: var(--ink-soft);
+  justify-self: start;
+}
+
+.news-list-item .category.event { color: var(--indigo); border-color: var(--indigo); }
+.news-list-item .category.press { color: var(--gold); border-color: var(--gold); }
+
+.news-list-item .title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+
+.news-list-item .arrow {
+  font-size: 0.95rem;
+  color: var(--ink-mute);
+  transition: transform 0.25s, color 0.25s;
+}
+
+.news-list-item:hover .arrow {
+  transform: translateX(6px);
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .news-list-item {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "date category"
+      "title title"
+      "arrow arrow";
+    gap: 0.8rem;
+    padding: 1.6rem 0;
+  }
+  .news-list-item .date { grid-area: date; }
+  .news-list-item .category { grid-area: category; justify-self: end; }
+  .news-list-item .title { grid-area: title; font-size: 1rem; }
+  .news-list-item .arrow { grid-area: arrow; justify-self: end; }
+  .news-list-item:hover { padding-left: 0; }
+}
+
+/* ───────────── NEWS DETAIL (news/<slug>.html) ───────────── */
+.news-detail {
+  padding: 9rem 0 6rem;
+}
+
+.news-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  color: var(--ink-mute);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  transition: color 0.25s;
+}
+
+.news-back:hover { color: var(--ink); }
+
+.news-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.news-detail-meta .date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  color: var(--ink-mute);
+}
+
+.news-detail-meta .category {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--ink-mute);
+  color: var(--ink-soft);
+}
+
+.news-detail-meta .category.event { color: var(--indigo); border-color: var(--indigo); }
+.news-detail-meta .category.press { color: var(--gold); border-color: var(--gold); }
+
+.news-detail h1 {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  margin-bottom: 3rem;
+  max-width: 920px;
+}
+
+.news-cover {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto 4rem;
+  display: block;
+  border: 1px solid var(--line);
+}
+
+.news-body {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+  line-height: 2.2;
+  color: var(--ink-soft);
+}
+
+.news-body p { margin-bottom: 1.6rem; }
+
+.news-body h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin: 3rem 0 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-body h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  margin: 2rem 0 0.8rem;
+}
+
+.news-body ul, .news-body ol {
+  padding-left: 1.6em;
+  margin-bottom: 1.6rem;
+}
+
+.news-body li { margin-bottom: 0.6rem; }
+
+.news-body dl {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  gap: 0.9rem 1.5rem;
+  margin-bottom: 1.6rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.news-body dt {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+.news-body dd { color: var(--ink); }
+
+@media (max-width: 600px) {
+  .news-body dl { grid-template-columns: 1fr; gap: 0.2rem 0; }
+  .news-body dt { padding-top: 0.8rem; }
+  .news-body dd { padding-bottom: 0.8rem; border-bottom: 1px dotted var(--line); }
+  .news-body dd:last-child { border-bottom: none; }
+}
+
+.news-body a {
+  color: var(--indigo);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.news-body a:hover { color: var(--ink); }
+
+.news-related {
+  max-width: 720px;
+  margin: 4rem auto 0;
+  padding: 2.5rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-related-label {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.news-related ul { list-style: none; padding: 0; }
+.news-related li { margin-bottom: 0.8rem; }
+
+.news-related a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.96rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--ink-mute);
+  padding-bottom: 0.15rem;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.news-related a:hover {
+  color: var(--indigo);
+  border-bottom-color: var(--indigo);
+}
+
+.news-related a::after {
+  content: "↗";
+  font-size: 0.85em;
+  color: var(--ink-mute);
+}
+
+.news-detail-nav {
+  max-width: 720px;
+  margin: 4rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.news-detail-nav a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  color: var(--ink-mute);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.news-detail-nav a:hover { color: var(--ink); }
+
+/* ───────────── FOOTER (sync with index/contact) ───────────── */
+footer {
+  background: var(--ink);
+  color: var(--silver-light);
+  padding: 5rem 0 2rem;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.footer-brand .brand-svg {
+  height: 28px;
+  width: auto;
+  display: block;
+  color: var(--paper);
+  margin-bottom: 1rem;
+}
+
+.footer-brand .ja {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: var(--silver-light);
+  margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 2;
+  color: var(--silver);
+  max-width: 320px;
+}
+
+.footer-col h5 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  color: var(--silver);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.8rem; }
+.footer-col a {
+  color: var(--silver-light);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--paper); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(244, 240, 232, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--silver);
+}
+
+.footer-bottom .copy {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+
+/* ───────────── MOBILE: iOS Safari paint artifact fixes ───────────── */
+@media (max-width: 768px) {
+  body::before,
+  body::after { display: none; }
+
+  .nav {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    isolation: isolate;
+  }
+}
