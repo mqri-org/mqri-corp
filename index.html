@@ -561,6 +561,93 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; position: relative; }
 
 .news-archive-link:hover { border-bottom-color: var(--ink); }
 
+/* ─── メディア掲載 sub-block (within NEWS section) ─── */
+.news-press {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.news-press-header {
+  margin-bottom: 1.8rem;
+}
+
+.news-press-label {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.news-press-intro {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  max-width: 720px;
+}
+
+.news-press-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 720px;
+}
+
+.news-press-list li { margin: 0; }
+
+.news-press-list a {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px dotted var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  transition: padding-left 0.2s, border-bottom-color 0.2s;
+}
+
+.news-press-list a:hover {
+  padding-left: 0.5rem;
+  border-bottom-color: var(--ink-mute);
+}
+
+.news-press-list .press-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+}
+
+.news-press-list .press-media {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.98rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.news-press-list .press-arrow {
+  font-size: 0.95rem;
+  color: var(--ink-mute);
+  transition: color 0.2s;
+}
+
+.news-press-list a:hover .press-arrow {
+  color: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .news-press-list a {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+  }
+}
+
 /* ───────────── FOUR REGENERATIONS ───────────── */
 .regen {
   background: var(--paper-warm);
@@ -1368,6 +1455,39 @@ footer {
 
     <div class="news-section-footer">
       <a href="/news/" class="news-archive-link">すべてのお知らせ →</a>
+    </div>
+
+    <!-- ─── メディア掲載 (sub-block) ─── -->
+    <div class="news-press">
+      <div class="news-press-header">
+        <div class="news-press-label">メディア掲載 ／ Press</div>
+        <p class="news-press-intro">
+          2026.05.20「八百万の蜂プロジェクト」始動の発表が、以下の媒体に掲載されました。
+        </p>
+      </div>
+      <ul class="news-press-list">
+        <li>
+          <a href="https://www.nishinippon.co.jp/item/1494332/" target="_blank" rel="noopener noreferrer">
+            <span class="press-date">2026.05.20</span>
+            <span class="press-media">西日本新聞</span>
+            <span class="press-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://kokura.keizai.biz/release/580946/" target="_blank" rel="noopener noreferrer">
+            <span class="press-date">2026.05.20</span>
+            <span class="press-media">小倉経済新聞</span>
+            <span class="press-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.the-miyanichi.co.jp/pressrelease/prtimes/783860.html" target="_blank" rel="noopener noreferrer">
+            <span class="press-date">2026.05.20</span>
+            <span class="press-media">宮崎日日新聞</span>
+            <span class="press-arrow">↗</span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
