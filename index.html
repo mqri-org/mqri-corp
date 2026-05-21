@@ -436,6 +436,131 @@ section { padding: clamp(5rem, 10vw, 9rem) 0; position: relative; }
   letter-spacing: 0.12em;
 }
 
+/* ───────────── NEWS (top page section) ───────────── */
+.news-section {
+  padding: 7rem 0;
+  position: relative;
+}
+
+.news-section-header {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+  .news-section-header { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.news-cards {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-card {
+  display: grid;
+  grid-template-columns: 110px 120px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.25s, padding-left 0.25s;
+}
+
+.news-card:hover {
+  background: rgba(255, 255, 255, 0.4);
+  padding-left: 1rem;
+}
+
+.news-card .date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+}
+
+.news-card .category {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--ink-mute);
+  color: var(--ink-soft);
+  justify-self: start;
+}
+
+.news-card .category.event { color: var(--indigo); border-color: var(--indigo); }
+.news-card .category.press { color: var(--gold); border-color: var(--gold); }
+
+.news-card .news-card-meta {
+  display: contents;
+}
+
+.news-card-title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+.news-card-excerpt { display: none; }
+
+.news-card-link {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.25s;
+}
+
+.news-card:hover .news-card-link { color: var(--ink); }
+
+@media (max-width: 768px) {
+  .news-card {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "date category"
+      "title title"
+      "link link";
+    gap: 0.7rem;
+    padding: 1.5rem 0;
+  }
+  .news-card .news-card-meta { display: contents; }
+  .news-card .date { grid-area: date; }
+  .news-card .category { grid-area: category; justify-self: end; }
+  .news-card-title { grid-area: title; }
+  .news-card-link { grid-area: link; justify-self: end; }
+  .news-card:hover { padding-left: 0; }
+}
+
+.news-section-footer {
+  margin-top: 3rem;
+  text-align: right;
+}
+
+.news-archive-link {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-mute);
+  padding-bottom: 0.2rem;
+  transition: border-color 0.25s;
+}
+
+.news-archive-link:hover { border-bottom-color: var(--ink); }
+
 /* ───────────── FOUR REGENERATIONS ───────────── */
 .regen {
   background: var(--paper-warm);
@@ -1098,6 +1223,7 @@ footer {
     </a>
     <ul class="nav-menu">
       <li><a href="#about">ABOUT</a></li>
+      <li><a href="#news">NEWS</a></li>
       <li><a href="#business">BUSINESS</a></li>
       <li><a href="#projects">PROJECTS</a></li>
       <li><a href="#organization">ORGANIZATION</a></li>
@@ -1199,12 +1325,59 @@ footer {
   </div>
 </section>
 
+<!-- ============ NEWS ============ -->
+<section class="news-section" id="news">
+  <div class="container">
+    <div class="news-section-header">
+      <div>
+        <div class="section-num">02 ／ NEWS</div>
+        <h2 class="section-title">最新のお知らせ</h2>
+      </div>
+      <p class="section-lead">
+        イベント開催・プレスリリースなど、MQRIからの最新のお知らせを掲載しています。
+      </p>
+    </div>
+
+    <div class="news-cards">
+
+      <a class="news-card" href="/news/2026-05-20-yaorozu-bee-press">
+        <div class="news-card-meta">
+          <span class="date">2026.05.20</span>
+          <span class="category press">お知らせ</span>
+        </div>
+        <h3 class="news-card-title">5/20 世界ミツバチの日に、福岡発「八百万の蜂プロジェクト」始動</h3>
+        <p class="news-card-excerpt">
+          蜂・菌・花・人・地域をつなぐ、未来世代のための再生循環プロジェクトを始動しました。
+        </p>
+        <span class="news-card-link">詳細を見る →</span>
+      </a>
+
+      <a class="news-card" href="/news/2026-05-13-regen-day">
+        <div class="news-card-meta">
+          <span class="date">2026.05.13</span>
+          <span class="category event">イベント</span>
+        </div>
+        <h3 class="news-card-title">「REGEN DAY 01 FUKUOKA」を 2026年7月13日（月）に開催します</h3>
+        <p class="news-card-excerpt">
+          福岡市・警固神社にて、蜂と菌をテーマにした初の REGEN DAY を開催。船橋康貴氏、中村弥和氏らが登壇。
+        </p>
+        <span class="news-card-link">詳細を見る →</span>
+      </a>
+
+    </div>
+
+    <div class="news-section-footer">
+      <a href="/news/" class="news-archive-link">すべてのお知らせ →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ BUSINESS ============ -->
 <section class="regen" id="business">
   <div class="container">
     <div class="regen-header">
       <div>
-        <div class="section-num">02 ／ BUSINESS</div>
+        <div class="section-num">03 ／ BUSINESS</div>
         <h2 class="section-title">事業内容</h2>
       </div>
       <p class="section-lead">
@@ -1303,7 +1476,7 @@ footer {
 <!-- ============ PROJECTS ============ -->
 <section class="structure" id="projects">
   <div class="container">
-    <div class="section-num">03 ／ PROJECTS</div>
+    <div class="section-num">04 ／ PROJECTS</div>
     <h2 class="section-title">主要プロジェクト</h2>
     <p class="section-lead">
       MQRIが企画・運営する事業ラインです。地域共創・環境学習・情報発信・AI活用の各領域で、企業・団体・地域コミュニティ・個人と連携してプロジェクトを展開しています。
@@ -1348,7 +1521,7 @@ footer {
 <!-- ============ ORGANIZATION ============ -->
 <section class="org" id="organization">
   <div class="container">
-    <div class="section-num">04 ／ ORGANIZATION</div>
+    <div class="section-num">05 ／ ORGANIZATION</div>
     <h2 class="section-title">法人概要</h2>
     <p class="section-lead">
       MQRIは、福岡県糸島市に拠点を構える一般社団法人です。糸島の研究フィールドを拠点に、自然環境・地域共創・ウェルビーイング・AI活用に関する調査研究、企画運営、情報発信を行っています。
@@ -1491,6 +1664,7 @@ footer {
           <li><a href="#projects">REGEN</a></li>
           <li><a href="#projects">八百万の蜂プロジェクト</a></li>
           <li><a href="#projects">ABC</a></li>
+          <li><a href="/news/">News</a></li>
           <li><a href="#organization">Organization</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
