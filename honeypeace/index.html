@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ハニーさん 商品のご案内</title>
+<meta name="description" content="ハニーさんの作品・商品のご案内とお申し込み">
+<style>
+  :root{
+    --cream:#fbf6ec; --card:#fffdf8; --ink:#3a2c1a; --sub:#7a6a52;
+    --honey:#e8a417; --honey-d:#c9820a; --line:#ecdfc7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  header.hero{text-align:center;padding:52px 20px 40px}
+  .hero .mark{font-size:34px;letter-spacing:.02em}
+  .hero h1{margin:.3em 0 .1em;font-size:30px;letter-spacing:.04em}
+  .hero p{margin:.4em auto 0;max-width:30em;color:var(--sub);font-size:15px}
+  .hero .glyph{color:var(--honey-d);font-size:18px;margin-top:14px}
+  .lead{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;margin:8px auto 34px;font-size:15px;color:var(--sub)}
+  .lead b{color:var(--ink)}
+  h2.sec{font-size:15px;letter-spacing:.14em;color:var(--honey-d);
+    text-align:center;margin:8px 0 22px;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;
+    overflow:hidden;display:flex;flex-direction:column}
+  /* 写真枠：撮影後に <img src="..."> に差し替え。比率はそのまま */
+  .photo{aspect-ratio:4/3;width:100%;object-fit:cover;background:
+    repeating-linear-gradient(45deg,#f5ead2,#f5ead2 12px,#f1e3c4 12px,#f1e3c4 24px);
+    display:flex;align-items:center;justify-content:center;color:#b79a63;
+    font-size:13px;letter-spacing:.1em}
+  .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+  .card h3{margin:0 0 2px;font-size:17px}
+  .price{font-size:20px;font-weight:700;color:var(--ink)}
+  .price small{font-size:12px;color:var(--sub);font-weight:400;margin-left:4px}
+  .tag{display:inline-block;margin-top:8px;font-size:12px;color:var(--honey-d);
+    background:#fbeecb;border-radius:999px;padding:2px 10px}
+  .btn{margin-top:auto;display:block;text-align:center;text-decoration:none;
+    background:var(--honey);color:#3a2c1a;font-weight:700;font-size:15px;
+    padding:12px 16px;border-radius:12px;transition:background .15s}
+  .btn:hover{background:var(--honey-d);color:#fff}
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;margin:34px 0;font-size:14px;color:var(--sub)}
+  .notes h3{margin:0 0 10px;color:var(--ink);font-size:15px}
+  .notes ul{margin:0;padding-left:1.2em} .notes li{margin:.35em 0}
+  .allbtn{text-align:center;margin:30px 0 10px}
+  .allbtn a{text-decoration:none;color:var(--honey-d);font-weight:700;
+    border:1.5px solid var(--honey);border-radius:12px;padding:12px 26px;display:inline-block}
+  footer{text-align:center;color:var(--sub);font-size:12px;padding:30px 20px 50px}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="mark">🐝</div>
+    <h1>ハニーさん</h1>
+    <p>作品と商品のご案内です。気になるものは、下のボタンからお申し込みいただけます。</p>
+    <div class="glyph">🌏 🌿 🙏 ✨</div>
+  </header>
+
+  <div class="wrap">
+    <div class="lead">
+      ご覧いただきありがとうございます。<br>
+      ご注文は各商品の「<b>申し込む</b>」ボタンから承ります。<b>後日配送</b>でお届けします。
+      ご注文後、<b>担当より追ってご連絡</b>いたします（お支払い・配送のご案内）。
+    </div>
+
+    <h2 class="sec">商品一覧</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img class="photo" src="images/tshirt.jpg" alt="Tシャツ" loading="lazy">
+        <div class="body">
+          <h3>Tシャツ</h3>
+          <div class="price">¥6,600<small>税込</small></div>
+          <span class="tag">サイズ S / M / L / XL</span>
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform?usp=pp_url&entry.1145611135=1">申し込む</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="photo" src="images/honey.jpg" alt="はちみつ" loading="lazy">
+        <div class="body">
+          <h3>はちみつ</h3>
+          <div class="price">¥11,000<small>税込</small></div>
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform?usp=pp_url&entry.2099906089=1">申し込む</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="photo" src="images/manga.jpg" alt="マンガ" loading="lazy">
+        <div class="body">
+          <h3>マンガ</h3>
+          <div class="price">¥550<small>税込</small></div>
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform?usp=pp_url&entry.475249787=1">申し込む</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="photo" src="images/accessory.jpg" alt="アクセサリー" loading="lazy">
+        <div class="body">
+          <h3>アクセサリー</h3>
+          <div class="price">¥3,300<small>税込</small></div>
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform?usp=pp_url&entry.949277358=1">申し込む</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="photo" src="images/sticker.jpg" alt="ステッカー・ハガキ" loading="lazy">
+        <div class="body">
+          <h3>ステッカー・ハガキ</h3>
+          <div class="price">¥550<small>税込</small></div>
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform?usp=pp_url&entry.2022930643=1">申し込む</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo">写真準備中</div>
+        <div class="body">
+          <h3>高波動インク蜂Tシャツ</h3>
+          <div class="price">¥3,300<small>税込</small></div>
+          <span class="tag">サイズ S / M / L / XL</span>
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform?usp=pp_url&entry.189185059=1">申し込む</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="photo" src="images/genga.jpg" alt="原画ハガキサイズ" loading="lazy">
+        <div class="body">
+          <h3>原画ハガキサイズ</h3>
+          <div class="price">¥5,500<small>税込</small></div>
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform?usp=pp_url&entry.1087295621=1">申し込む</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="allbtn">
+      <a target="_blank" rel="noopener"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSemP5sz7ZHPVECustAXanofrAvF7rTKpT0jznHqen53O_7xlQ/viewform">まとめて注文フォームを開く</a>
+    </div>
+
+    <div class="notes">
+      <h3>ご注文について</h3>
+      <ul>
+        <li>複数の商品・個数は、フォーム内でまとめてお選びいただけます。</li>
+        <li>Tシャツ類はフォームでサイズ（S / M / L / XL）をお選びください。</li>
+        <li>商品は<b>後日配送</b>でお届けします。会場でのお渡しはありません。</li>
+        <li>ご注文後、担当より<b>お支払い・配送のご案内</b>を差し上げます。</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>© ハニーさん / お申し込みはGoogleフォームにて承ります</footer>
+</body>
+</html>
