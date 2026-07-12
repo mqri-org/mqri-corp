@@ -30,9 +30,10 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:18px;
     overflow:hidden;display:flex;flex-direction:column}
   /* 写真枠：撮影後に <img src="..."> に差し替え。比率はそのまま */
-  .photo{aspect-ratio:4/3;width:100%;object-fit:cover;background:
-    repeating-linear-gradient(45deg,#f5ead2,#f5ead2 12px,#f1e3c4 12px,#f1e3c4 24px);
-    display:flex;align-items:center;justify-content:center;color:#b79a63;
+  .photo{aspect-ratio:4/3;width:100%;background:
+    repeating-linear-gradient(45deg,#f5ead2,#f5ead2 12px,#f1e3c4 12px,#f1e3c4 24px)}
+  img.photo{object-fit:cover;display:block}
+  div.photo{display:flex;align-items:center;justify-content:center;color:#b79a63;
     font-size:13px;letter-spacing:.1em}
   .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
   .card h3{margin:0 0 2px;font-size:17px}
