@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/regen/songmap",
+      "destination": "https://regen-songs.mqri.or.jp",
+      "permanent": false
+    }
+  ]
 }
