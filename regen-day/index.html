@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="ja" data-theme="a">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REGEN DAY 志賀島｜地球は、ぜんぶつながっている。2026.10.3 SAT</title>
+<meta name="description" content="花と蜂、山と海、めぐる再生の祝祭。2026年10月3日（土）福岡・志賀島 ふたば幼稚園。劇・お話・みんなでつくる体験・Bee Friendlyマイガーデンづくり。大人2,000円／こども500円（花KIT付き）。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="REGEN DAY 志賀島｜地球は、ぜんぶつながっている。">
+<meta property="og:description" content="花と蜂、山と海、めぐる再生の祝祭。2026.10.3 SAT 福岡・志賀島。大人も、こどもも。花KIT付き。">
+<meta property="og:image" content="https://www.mqri.or.jp/regen-day/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231d4a3a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e3b243'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CONFIG（文言・リンクはここだけ触ればOK）
+   ============================================================ */
+:root{
+  --form-url: "https://forms.gle/ytmjCoWnSzx3Mv7o7";
+}
+/* --- palette (theme A: 朝の光) --- */
+:root{
+  --green:#1d4a3a;      /* カバーの深緑 */
+  --green-2:#2f6b4f;
+  --leaf:#7fb069;
+  --honey:#e3b243;      /* 蜂の軌跡の金 */
+  --honey-2:#f3d27a;
+  --sky:#d7ebf4;
+  --sea:#4c93b6;
+  --bg:#f7f9f6;
+  --bg-2:#eef4ee;
+  --card:#ffffff;
+  --ink:#1e2a25;
+  --ink-2:#4d5c55;
+  --line:#dfe7e1;
+  --hero-ink:#1d4a3a;
+  --hero-bg:linear-gradient(160deg,#eaf3f7 0%,#f7f9f6 45%,#eef6ea 100%);
+  --radius:22px;
+  --shadow:0 20px 50px -24px rgba(29,74,58,.35);
+}
+/* --- theme B: 森の夜（ヒーローだけ深緑で沈める） --- */
+[data-theme="b"]{
+  --hero-ink:#f4f7f2;
+  --hero-bg:radial-gradient(120% 90% at 20% 10%,#2f6b4f 0%,#1d4a3a 45%,#12332a 100%);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;font-weight:600;letter-spacing:.02em;line-height:1.4;margin:0}
+.en{font-family:"Fraunces","Noto Serif JP",serif;letter-spacing:.14em}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+section{position:relative;padding:clamp(64px,9vw,120px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--green-2);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--honey);border-radius:2px}
+.h2{font-size:clamp(26px,3.6vw,40px);margin-top:14px;color:var(--green)}
+.lead{font-size:clamp(16px,1.6vw,18px);color:var(--ink-2);max-width:44em}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:700;letter-spacing:.04em}
+.pill.honey{background:var(--honey);color:#3c2d05}
+.pill.soft{background:#fff;color:var(--green);border:1.5px solid var(--line)}
+
+/* ---- buttons ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:18px 34px;font-weight:700;font-size:17px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--honey);color:#2b2005;box-shadow:0 14px 34px -14px rgba(227,178,67,.9)}
+.btn-primary:hover{box-shadow:0 20px 40px -14px rgba(227,178,67,1)}
+.btn-ghost{background:transparent;color:var(--hero-ink);border:1.5px solid currentColor;opacity:.9}
+.btn svg{width:18px;height:18px}
+
+/* ---- header ---- */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:38px;width:auto}
+nav{display:flex;gap:22px;font-size:14px;font-weight:500}
+nav a{text-decoration:none;color:var(--ink-2)}
+nav a:hover{color:var(--green)}
+header .btn{padding:10px 20px;font-size:14px}
+@media (max-width:820px){nav{display:none}}
+
+/* ---- S1 hero ---- */
+.hero{background:var(--hero-bg);color:var(--hero-ink);padding:clamp(40px,6vw,88px) 0 clamp(60px,8vw,110px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero-date{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.hero-date .big{font-family:"Fraunces",serif;font-weight:700;font-size:clamp(40px,5vw,64px);letter-spacing:.02em;line-height:1}
+.hero-date .sub{font-family:"Fraunces",serif;letter-spacing:.2em;font-size:14px;opacity:.85}
+.hero h1{font-size:clamp(34px,5.4vw,66px);line-height:1.25;margin:22px 0 14px;font-weight:700}
+.hero h1 .thin{display:block;font-size:.5em;font-weight:500;letter-spacing:.08em;margin-bottom:10px;opacity:.9}
+.hero .tag{font-size:clamp(16px,1.6vw,20px);font-weight:500;letter-spacing:.06em}
+.hero .facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin:26px 0 30px;font-size:15px}
+.hero .facts span{display:inline-flex;align-items:center;gap:8px}
+.hero .facts svg{width:18px;height:18px;flex:none}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero .note{font-size:13px;opacity:.8;margin-top:12px}
+.hero-visual{position:relative}
+.hero-visual .photo{aspect-ratio:1/1;border-radius:46% 54% 52% 48% / 54% 44% 56% 46%;overflow:hidden;box-shadow:var(--shadow);animation:breathe 14s ease-in-out infinite}
+.hero-visual .photo img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero-visual .chip{position:absolute;background:#fff;color:var(--green);border-radius:16px;padding:12px 16px;box-shadow:var(--shadow);font-size:13px;font-weight:700;line-height:1.4}
+.hero-visual .chip b{display:block;font-family:"Fraunces",serif;font-size:20px;letter-spacing:.04em}
+.hero-visual .chip.c1{left:-10px;bottom:12%}
+@keyframes breathe{0%,100%{border-radius:46% 54% 52% 48% / 54% 44% 56% 46%}50%{border-radius:52% 48% 46% 54% / 46% 56% 44% 54%}}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-visual{order:-1;max-width:420px;margin:0 auto}
+  .hero-visual .chip.c1{left:0}
+  .hero .cta .btn{width:100%}
+}
+
+/* ---- S2 intro / chain ---- */
+.intro-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:start}
+.intro-body{margin-top:clamp(34px,5vw,60px);max-width:46em;display:grid;gap:14px}
+.intro-body p{margin:0;font-size:clamp(15.5px,1.5vw,17px);color:var(--ink-2)}
+.quote{font-size:clamp(22px,2.6vw,30px);color:var(--green);line-height:1.6}
+.chain{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0;position:relative}
+.chain li{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:center;padding:12px 0;font-family:"Noto Serif JP",serif;font-size:clamp(18px,2vw,22px);color:var(--ink)}
+.chain .dot{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;position:relative;font-size:15px}
+.chain li:not(:last-child) .dot::after{content:"";position:absolute;top:34px;left:50%;width:2px;height:28px;background:repeating-linear-gradient(to bottom,var(--honey) 0 4px,transparent 4px 9px)}
+.chain .d1{background:#fbeff4}.chain .d2{background:#efe6d8}.chain .d3{background:#e5f0e2}.chain .d4{background:#e0eef6}.chain .d5{background:#eef0f4}
+.photo-blob{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.photo-blob img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.intro-top{grid-template-columns:1fr;gap:22px}}
+
+/* ---- S3 program ---- */
+.program{background:var(--bg-2)}
+.plist{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px;max-width:760px}
+.plist li{background:var(--card);border-radius:16px;padding:20px 24px;font-family:"Noto Serif JP",serif;font-size:clamp(17px,1.9vw,20px);color:var(--green);box-shadow:0 10px 26px -20px rgba(29,74,58,.4)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 34px -22px rgba(29,74,58,.35);display:flex;flex-direction:column}
+.card .img{aspect-ratio:4/3;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.card:hover .img img{transform:scale(1.04)}
+.card .body{padding:20px 22px 24px}
+.card .num{font-family:"Fraunces",serif;color:var(--honey);font-weight:700;letter-spacing:.1em;font-size:13px}
+.card h3{font-size:19px;margin:6px 0 8px;color:var(--green)}
+.card p{margin:0;font-size:14.5px;color:var(--ink-2)}
+@media (max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grid4{grid-template-columns:1fr}}
+
+/* ---- S4 kit ---- */
+.kit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,70px);align-items:center}
+.kit .photo-blob{aspect-ratio:1/1;border-radius:60% 40% 55% 45% / 50% 60% 40% 50%;max-width:440px}
+@media (max-width:860px){.kit .wrap{grid-template-columns:1fr}.kit .photo-blob{margin:0 auto}}
+
+/* ---- S5 speakers ---- */
+.speakers{background:var(--green);color:#f1f5f0}
+.speakers .eyebrow{color:var(--honey-2)}
+.speakers .h2{color:#fff}
+.speakers .lead{color:#cfe0d3}
+.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.sp{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:clamp(22px,3vw,34px);display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:start}
+.sp .face{width:96px;height:96px;border-radius:50%;overflow:hidden;background:conic-gradient(from 140deg,var(--honey) 0 40%,var(--leaf) 40% 100%);display:grid;place-items:center;font-family:"Noto Serif JP",serif;font-size:30px;color:var(--green);font-weight:700}
+.sp .face img{width:100%;height:100%;object-fit:cover}
+.sp .role{font-size:12.5px;letter-spacing:.14em;color:var(--honey-2);font-weight:700}
+.sp h3{font-size:24px;color:#fff;margin:4px 0 2px}
+.sp .sub{font-size:14px;color:#cfe0d3;margin-bottom:12px}
+.sp p{margin:0 0 10px;font-size:14.5px;color:#e2ebe4}
+.sp .gp{font-weight:700;color:#fff;border-bottom:1.5px dashed var(--honey-2);padding-bottom:1px}
+.sp a.gp[href]{text-decoration:none;transition:color .2s}
+.sp a.gp[href]:hover{color:var(--honey-2);border-bottom-style:solid}
+.sp .talk{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(255,255,255,.25);color:#fff;font-weight:500}
+@media (max-width:900px){.sp-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.sp{grid-template-columns:1fr}.sp .face{width:80px;height:80px}}
+
+/* ---- S6 overview ---- */
+.ov .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:start}
+.dl{display:grid;grid-template-columns:120px 1fr;gap:0;border-top:1px solid var(--line);margin-top:30px}
+.dl>div{padding:18px 4px;border-bottom:1px solid var(--line)}
+.dl dt{font-weight:700;color:var(--green);font-size:14px;letter-spacing:.06em}
+.dl dd{margin:0;font-size:15.5px}
+.dl .price{font-family:"Fraunces",serif;font-size:28px;font-weight:700;color:var(--green);letter-spacing:.02em;line-height:1.2}
+.dl .price small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:13px;font-weight:500;color:var(--ink-2);margin-left:6px;letter-spacing:0}
+.timeline{background:var(--card);border-radius:var(--radius);padding:clamp(22px,3vw,34px);box-shadow:var(--shadow)}
+.timeline h3{font-size:18px;color:var(--green);margin-bottom:16px}
+.tl{list-style:none;margin:0;padding:0;display:grid}
+.tl li{display:grid;grid-template-columns:76px 20px 1fr;gap:12px;align-items:start;padding:10px 0}
+.tl .t{font-family:"Fraunces",serif;font-weight:700;color:var(--green);font-size:20px;line-height:1.3}
+.tl .k{position:relative;width:20px;height:100%}
+.tl .k::before{content:"";position:absolute;left:6px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--honey)}
+.tl li:not(:last-child) .k::after{content:"";position:absolute;left:9.5px;top:20px;bottom:-14px;width:1px;background:var(--line)}
+.tl .d{font-size:15px}
+.tl .d small{display:block;color:var(--ink-2);font-size:13px}
+.map{margin-top:18px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/10;background:var(--sky)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:860px){.ov .wrap{grid-template-columns:1fr}.dl{grid-template-columns:96px 1fr}}
+
+/* ---- S8 apply ---- */
+.apply{background:linear-gradient(180deg,var(--bg-2),#fff)}
+.apply-head{text-align:center;max-width:720px;margin:0 auto}
+.apply-head .lead{margin:14px auto 0}
+.form-shell{margin:36px auto 0;max-width:900px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.form-shell .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px;padding:14px 20px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.form-shell .bar b{color:var(--green)}
+.form-shell .bar a{font-weight:700;color:var(--green)}
+.form-shell iframe{width:100%;height:1400px;border:0;display:block;background:#fff}
+.apply .fallback{text-align:center;margin-top:28px}
+.apply .fallback .btn{font-size:18px;padding:20px 40px}
+.apply .fallback p{font-size:13.5px;color:var(--ink-2);margin:12px 0 0}
+
+/* ---- S9 host / footer ---- */
+.host{background:var(--bg-2)}
+.host .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.host-people{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;min-width:min(340px,70vw)}
+.host-people figure{margin:0;text-align:center}
+.host-people img{width:100%;max-width:170px;margin:0 auto;border-radius:50%}
+.host-people figcaption{margin-top:10px;line-height:1.5}
+.host-people figcaption b{display:block;font-family:"Noto Serif JP",serif;font-size:17px;color:var(--green)}
+.host-people figcaption span{font-size:12.5px;color:var(--ink-2);letter-spacing:.06em}
+.host .tagline{font-family:"Fraunces","Noto Serif JP",serif;font-size:clamp(19px,2vw,23px);line-height:1.5;letter-spacing:.03em;color:var(--green);margin:0 0 14px}
+.host h3{font-size:21px;color:var(--green);margin:14px 0 6px}
+.host p{margin:0 0 10px;font-size:15px;color:var(--ink-2)}
+@media (max-width:860px){.host .wrap{grid-template-columns:1fr}.host-people{max-width:400px;margin:0 auto}}
+.close{background:var(--green);color:#fff;text-align:center;padding:clamp(70px,10vw,130px) 0}
+.close .serif{font-size:clamp(24px,3.6vw,40px);line-height:1.6}
+.close p{color:#cfe0d3;margin:16px auto 30px;max-width:34em}
+footer{padding:36px 0 110px;font-size:13px;color:var(--ink-2)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--ink-2)}
+
+/* ---- sticky mobile CTA ---- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:none}
+.sticky .btn{width:100%;padding:16px}
+.sticky small{display:block;text-align:center;color:var(--ink-2);font-size:12px;margin-top:6px}
+@media (max-width:820px){.sticky{display:block}}
+@media (max-width:340px){.hero h1{font-size:26px}}
+@media (max-width:420px){
+  .hero h1{font-size:30px;letter-spacing:0}
+  .hero-date .big{font-size:38px}
+}
+@media (max-width:520px){
+  .grid4{gap:14px}
+  .card{flex-direction:row;align-items:stretch}
+  .card .img{aspect-ratio:auto;width:34%;flex:none}
+  .card .body{padding:14px 16px 16px}
+  .card h3{font-size:16.5px}
+  .card p{font-size:13.5px}
+}
+@media (max-width:560px){
+  .btn{white-space:normal;text-align:center;line-height:1.4;padding:16px 22px;font-size:16px}
+  header .btn{white-space:nowrap;padding:10px 16px;font-size:13.5px}
+  .apply .fallback .btn{width:100%;font-size:16px;padding:18px 20px}
+  .hero-visual .chip{font-size:12px;padding:10px 12px}
+  .hero-visual .chip b{font-size:17px}
+}
+
+/* ---- review badges（#review で表示） ---- */
+[data-s]{position:relative}
+body.review [data-s]::before{content:attr(data-s);position:absolute;left:8px;top:8px;z-index:5;background:#ff3d71;color:#fff;font:700 11px/1 monospace;padding:6px 8px;border-radius:6px;letter-spacing:.06em}
+
+/* ---- motion ---- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-visual .photo{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- S0 HEADER -->
+<header data-s="S0-HEADER">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="REGEN">
+      <img src="/regen-day/img/regen-logo.png" alt="REGEN" width="166" height="191">
+    </a>
+    <nav>
+      <a href="#program">当日の内容</a>
+      <a href="#kit">花KIT</a>
+      <a href="#speakers">登壇者</a>
+      <a href="#overview">開催概要</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a class="btn btn-primary" href="#apply">申し込む</a>
+  </div>
+</header>
+
+<!-- S1 HERO -->
+<section class="hero" id="top" data-s="S1-HERO">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-date">
+        <span class="big">2026.10.3</span>
+        <span class="sub">SAT / SHIKANOSHIMA, FUKUOKA</span>
+      </div>
+      <h1>
+        <span class="thin">REGEN DAY 02</span>
+        地球は、<br>ぜんぶつながっている。
+      </h1>
+      <p class="tag">花と蜂、山と海、めぐる再生の祝祭。</p>
+      <div class="facts">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>13:30–16:00（13:00受付開始）</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>ふたば幼稚園｜福岡・志賀島</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20c0-6 4-10 10-10 0 6-4 10-10 10z"/><path d="M4 20l7-7"/></svg>Bee Friendly 花KIT付き</span>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="#apply">
+          参加を申し込む
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#program">どんな日？</a>
+      </div>
+      <p class="note">大人 2,000円／こども・学生 500円（税込・花KIT込み）。親子でも、大人だけでも。</p>
+    </div>
+    <div class="hero-visual">
+      <div class="photo"><img src="/regen-day/img/people.jpg" alt="志賀島の緑と海を背景に、笑う大人とこども" width="1100" height="1072" fetchpriority="high"></div>
+    </div>
+  </div>
+</section>
+
+<!-- S2 INTRO -->
+<section class="intro reveal" id="about" data-s="S2-INTRO">
+  <div class="wrap">
+    <div class="intro-top">
+      <div>
+        <span class="eyebrow">About</span>
+        <p class="quote serif">「参加したらなんか<br>世界が変わって見えた！」</p>
+        <p class="lead">自然はこんなにちゃんと循環しているのだから安心して生きていける🌏<br>大人も子どもも楽しめる１日に。</p>
+      </div>
+      <ul class="chain" aria-label="つながっているもの">
+        <li><span class="dot d1">🌸</span>花と蜂。</li>
+        <li><span class="dot d2">🪱</span>土と微生物。</li>
+        <li><span class="dot d3">🌲</span>森と山。</li>
+        <li><span class="dot d4">🌊</span>川と海。</li>
+        <li><span class="dot d5">☁️</span>雲と雨。</li>
+      </ul>
+    </div>
+    <div class="intro-body">
+      <p>自然の中では、いろんなものがつながり、めぐっています。今回は、そのつながりを<strong>劇、お話、みんなで参加する体験、ガーデンづくり</strong>を通して楽しみます。</p>
+      <p>こどもにもわかりやすく。大人にとっても、新しい発見があるように。親子での参加はもちろん、自然や生態系、サステナビリティに興味のある大人の方だけでも大歓迎です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- S3 PROGRAM -->
+<section class="program reveal" id="program" data-s="S3-PROGRAM">
+  <div class="wrap">
+    <span class="eyebrow">Program</span>
+    <h2 class="h2">当日の内容</h2>
+    <ul class="plist">
+      <li>🎭 地球のつながりをテーマにしたお楽しみ劇</li>
+      <li>🌏 みんなでつくる「いのちの循環」</li>
+      <li>🐝 花・蜂・土・微生物・山・海のお話</li>
+      <li>🌱 Bee Friendly マイガーデンづくり</li>
+    </ul>
+  </div>
+</section>
+
+<!-- S4 KIT -->
+<section class="kit reveal" id="kit" data-s="S4-KIT">
+  <div class="wrap">
+    <div class="photo-blob"><img src="/regen-day/img/kid.jpg" alt="肩に小鳥をとまらせて笑うこども" style="object-position:50% 20%"></div>
+    <div>
+      <span class="eyebrow">Bee Friendly 花KIT</span>
+      <h2 class="h2">参加費には、<br>Bee Friendly 花KIT が<br>含まれています。</h2>
+      <p class="lead">自分で選んだ植物を植えて、おうちに持ち帰って育ててください。<br>イベントの続きが、それぞれの暮らしの中でも続いていったらうれしいです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- S5 SPEAKERS -->
+<section class="speakers reveal" id="speakers" data-s="S5-SPEAKERS">
+  <div class="wrap">
+    <span class="eyebrow">Speakers</span>
+    <h2 class="h2">登壇者</h2>
+    <div class="sp-grid">
+      <article class="sp">
+        <div class="face"><img src="/regen-day/img/face-honey.png" alt="ハニーさん（船橋康貴さん）"></div>
+        <div>
+          <div class="role">BEE</div>
+          <h3>ハニーさん</h3>
+          <div class="sub">船橋康貴さん｜元養蜂家</div>
+          <p>みつばちを見つめ続け、すべての命が安心して暮らせるためには、命の循環のトップランナーであるみつばちから始まり、人間が生きるために必要な全てを与えてくれている自然や動植物の大切さ、その大前提に「私自身を愛すること」を全世界で伝えてきた元養蜂家。</p>
+          <p>世界各国の先住民の方々との交流、ミツバチを守ろうと日本人で唯一パリのオペラ座と提携をむすんだり、アメリカのDisneyにアポなし飛込みした経験も。ドキュメンタリー映画『みつばちと地球とわたし』に出演。著書に『ハニーさんの自伝エッセイ』『ミツバチ目線の生き方提案』『コロナと胎内記憶とみつばち』『たいへん時はチャンス時』。キャッチコピーは『love me do♡』。</p>
+          <p>ハニーさんが提唱しているのが <a class="gp" data-gp>garden planet（ガーデンプラネット）</a> 🌏🌱 という構想です。ひとりひとりの心の中にもガーデンがあって、外の自然を育てることと、内側の自分を育てることは、つながっている。そんな見方です。</p>
+          <p class="talk">蜂を守ることは、花を守ること。花を守ることは、食や地域の風景、未来のいのちを守ること。当日は、蜂の視点から始まり、自然と人のつながりをやさしく、深く語っていただきます。</p>
+        </div>
+      </article>
+      <article class="sp">
+        <div class="face"><img src="/regen-day/img/face-miwa.png" alt="みわっち先生（中村弥和さん）"></div>
+        <div>
+          <div class="role">MICROBE</div>
+          <h3>みわっち先生</h3>
+          <div class="sub">中村弥和さん｜株式会社Re Flora 代表取締役</div>
+          <p>微生物、菌、土、植物、人のからだのつながりを探究し、菌検査・フローラ検査、講演、講座などを通じて、自然と生命の見えない営みを伝えている微生物領域の専門家。</p>
+          <p>株式会社Re Flora代表として、美と健康、住空間、農業、環境、プラネタリーヘルスなど幅広い分野で活動。農林水産省果樹試験場でウイルスを専攻した後、マスコミ分野でも活動し、TBSラジオでは教育ジャーナリストとして全国番組を担当。著書に『子どもの心をつかむちょっといい話し方』『学校のなぞ』など。日経ヘルスなどへの寄稿歴も。</p>
+          <p class="talk">菌や微生物は、土の中だけでなく、私たちの健康や感覚にも深く関わっています。当日は、菌の世界から、土とからだ、自然と人の再生について語っていただきます。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S6 HOST -->
+<section class="host reveal" id="host" data-s="S6-HOST">
+  <div class="wrap">
+    <div class="host-people">
+      <figure>
+        <img src="/regen-day/img/face-keisuke.png" alt="松石圭介">
+        <figcaption><b>松石 圭介</b><span>代表理事</span></figcaption>
+      </figure>
+      <figure>
+        <img src="/regen-day/img/face-hiroko.png" alt="松石裕子">
+        <figcaption><b>松石 裕子</b><span>代表理事</span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <span class="eyebrow">Host</span>
+      <h2 class="h2">主催</h2>
+      <h3>REGEN｜一般社団法人 松石量子再生研究所</h3>
+      <p class="tagline"><strong>Nature Positive.<br>Human Positive.<br>REGEN the Future.</strong></p>
+      <p>自然・人・地域を再生する、リジェネラティブ・プロジェクト。</p>
+      <p>REGENは、自然・人・地域・企業活動のあいだに、よりよい循環を生み出すためのプロジェクトです。蜂、微生物、植物、感情、ウェルビーイング、地域共創、企業の社会参加などをテーマに、イベント、対話、学び、共創の場をつくっています。</p>
+      <p>自然を守ることを、義務や正しさだけで語るのではなく、知ること、感じること、関わることを通じて、社会のエネルギーを再生の方向へ循環させることを目指しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- S7 OVERVIEW + S8 ACCESS -->
+<section class="ov reveal" id="overview" data-s="S7-OVERVIEW">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Overview</span>
+      <h2 class="h2">開催概要</h2>
+      <dl class="dl">
+        <div><dt>日時</dt></div><div><dd><strong>2026年10月3日（土）</strong><br>13:00 受付開始／13:30 スタート／16:00までに終了予定</dd></div>
+        <div><dt>会場</dt></div><div><dd>学校法人志賀島学園 ふたば幼稚園<br><small style="color:var(--ink-2)">福岡市東区志賀島1735-116</small></dd></div>
+        <div><dt>定員</dt></div><div><dd>50名程度</dd></div>
+        <div><dt>対象</dt></div><div><dd>どなたでも。親子・ご家族での参加も、大人だけの参加も歓迎です。</dd></div>
+        <div><dt>参加費</dt></div><div><dd>
+          <div class="price">¥2,000<small>大人（税込）</small></div>
+          <div class="price">¥500<small>こども・学生（税込）</small></div>
+          <div style="margin-top:8px"><span class="pill honey">🌿 Bee Friendly 花KIT付き</span></div>
+        </dd></div>
+        <div><dt>主催</dt></div><div><dd>一般社団法人 松石量子再生研究所（MQRI）／ REGEN<br><small style="color:var(--ink-2)">松石圭介・松石裕子</small></dd></div>
+      </dl>
+    </div>
+    <div id="access" data-s="S8-ACCESS">
+      <div class="timeline">
+        <h3>当日の流れ</h3>
+        <ul class="tl">
+          <li><span class="t">13:00</span><span class="k"></span><span class="d">受付開始</span></li>
+          <li><span class="t">13:30</span><span class="k"></span><span class="d">スタート</span></li>
+          <li><span class="t">16:00</span><span class="k"></span><span class="d">までに終了予定</span></li>
+        </ul>
+      </div>
+      <div class="map">
+        <iframe title="ふたば幼稚園の地図" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%E5%AD%A6%E6%A0%A1%E6%B3%95%E4%BA%BA%E5%BF%97%E8%B3%80%E5%B3%B6%E5%AD%A6%E5%9C%92%E3%81%B5%E3%81%9F%E3%81%B0%E5%B9%BC%E7%A8%8E%E5%9C%92%20%E7%A6%8F%E5%B2%A1%E5%B8%82%E6%9D%B1%E5%8C%BA%E5%BF%97%E8%B3%80%E5%B3%B61735-116&z=15&output=embed"></iframe>
+      </div>
+      <p style="font-size:13.5px;color:var(--ink-2);margin:12px 0 0">📍 学校法人志賀島学園 ふたば幼稚園｜福岡市東区志賀島1735-116　<a href="https://www.google.com/maps/search/?api=1&query=%E5%AD%A6%E6%A0%A1%E6%B3%95%E4%BA%BA%E5%BF%97%E8%B3%80%E5%B3%B6%E5%AD%A6%E5%9C%92%E3%81%B5%E3%81%9F%E3%81%B0%E5%B9%BC%E7%A8%8E%E5%9C%92" target="_blank" rel="noopener">Googleマップで開く</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- S9 APPLY -->
+<section class="apply reveal" id="apply" data-s="S9-APPLY">
+  <div class="wrap">
+    <div class="apply-head">
+      <span class="eyebrow">Entry</span>
+      <h2 class="h2">お申し込み</h2>
+      <p class="lead">下のフォームに書いて送るだけです。アカウント登録はいりません。</p>
+    </div>
+    <div class="form-shell">
+      <div class="bar"><span><b>申し込みフォーム</b>（Googleフォーム）</span><a href="https://forms.gle/ytmjCoWnSzx3Mv7o7" target="_blank" rel="noopener">別ウィンドウで開く ↗</a></div>
+      <iframe id="gform" title="REGEN DAY 申し込みフォーム"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdjGp-YWhrDGnNYXHmax9K2ssjq2s-0qMblgtZmwXK5lAcHDQ/viewform?embedded=true">読み込んでいます…</iframe>
+    </div>
+    <div class="fallback">
+      <a class="btn btn-primary" href="https://forms.gle/ytmjCoWnSzx3Mv7o7" target="_blank" rel="noopener">
+        フォームが表示されない方はこちら
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- S10 CLOSE -->
+<section class="close" data-s="S10-CLOSE">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--honey-2)">未来世代へ、めぐる祝祭。</span>
+    <p class="serif" style="margin-top:14px">こどもも、大人も。<br>一緒に笑って、学んで、つながる午後を。</p>
+    <p>自然豊かな志賀島でお会いしましょう。</p>
+    <a class="btn btn-primary" href="#apply">参加を申し込む</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 一般社団法人 松石量子再生研究所 / MQRI・REGEN</span>
+    <span><a href="https://mqri.or.jp" target="_blank" rel="noopener">mqri.or.jp</a></span>
+  </div>
+</footer>
+
+<div class="sticky" aria-hidden="false">
+  <a class="btn btn-primary" href="#apply">参加を申し込む（1分）</a>
+  <small>10/3（土）13:30〜｜志賀島 ふたば幼稚園</small>
+</div>
+
+<script>
+// ▼ garden planet コンセプトページのURL（できたらここに入れるだけでリンクになる）
+const GARDEN_PLANET_URL = '';
+if(GARDEN_PLANET_URL){document.querySelectorAll('[data-gp]').forEach(a=>{a.href=GARDEN_PLANET_URL;a.target='_blank';a.rel='noopener'})}
+// theme switch: ?t=b で「森の夜」案
+const q=new URLSearchParams(location.search);
+if(q.get('t')==='b')document.documentElement.dataset.theme='b';
+// #review でセクションIDバッジ
+if(location.hash==='#review')document.body.classList.add('review');
+// ?noembed=1 で外部iframeを止める（スクショ検査用）
+if(q.get('noembed'))document.querySelectorAll('iframe').forEach(f=>{f.removeAttribute('src');f.style.background='#e9efe9'});
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// 申し込みフォームまでスクロールしたら sticky を隠す
+const st=document.querySelector('.sticky'),ap=document.getElementById('apply');
+new IntersectionObserver(([e])=>{st.style.display=e.isIntersecting?'none':''},{threshold:.05}).observe(ap);
+</script>
+</body>
+</html>
