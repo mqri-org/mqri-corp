@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/regen-day",
+      "destination": "/regen-day/2026-10-03",
+      "permanent": false
+    }
+  ]
 }
