@@ -6,9 +6,9 @@
 <title>REGEN Report 2026 上半期｜Startup Edition ─ 無料ダウンロード ／ MQRI</title>
 <meta name="description" content="再生に、資本がめぐりはじめた。2026年上半期、日本のスタートアップ資金調達566件の観測から届ける、人と自然の再生の目録。全18ページ・無料。" />
 <meta property="og:title" content="REGEN Report 2026 上半期｜Startup Edition" />
-<meta property="og:description" content="再生に、資本がめぐりはじめた。国内566件と海外589件の観測から届ける、人と自然の再生の目録。Startup Edition／Global Startup Edition の2冊、無料ダウンロード。" />
+<meta property="og:description" content="再生に、資本がめぐりはじめた。2026年上半期、日本のスタートアップ資金調達566件の観測から届ける、人と自然の再生の目録。Startup Edition・全18ページ・無料ダウンロード。" />
 <meta property="og:image" content="https://mqri.or.jp/assets/regen-report-og.png" />
-<meta property="og:url" content="https://mqri.or.jp/regen-report.html" />
+<meta property="og:url" content="https://mqri.or.jp/regen-report" />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -829,6 +829,19 @@ footer {
   .contact-hero { overflow: hidden; }
 }
 
+/* ── 海外版への案内カード ── */
+.rr-sister{margin:90px auto 0;max-width:860px;padding:0 24px}
+.rr-sister-inner{display:flex;gap:32px;align-items:center;background:#0b0b0d;color:#f4f2ea;padding:30px 32px;text-decoration:none;border:1px solid #2a2a2e;transition:border-color .3s}
+.rr-sister-inner:hover{border-color:#ffd400}
+.rr-sister-cover{flex:0 0 120px}
+.rr-sister-cover img{width:100%;height:auto;display:block;box-shadow:0 8px 28px rgba(0,0,0,.6);border:1px solid #2a2a2e}
+.rr-sister-tx{flex:1 1 300px;min-width:240px}
+.rr-sister .rr-label{color:#ffd400;margin-bottom:8px}
+.rr-sister h2{font-family:"Helvetica Neue",Helvetica,"Hiragino Sans",sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:#f4f2ea;margin:0 0 10px}
+.rr-sister h2 em{font-style:normal;color:#ffd400}
+.rr-sister p{color:#c8c6bc;font-size:.86rem;line-height:1.95;letter-spacing:.03em;margin:0 0 14px}
+.rr-sister-cta{display:inline-block;color:#ffd400;font-size:.84rem;letter-spacing:.14em;font-weight:700;font-family:"Helvetica Neue",Helvetica,"Hiragino Sans",sans-serif}
+@media (max-width:560px){.rr-sister-inner{flex-direction:column;align-items:flex-start;padding:24px 22px}.rr-sister-cover{flex-basis:auto;width:110px}}
 </style>
 
 <style>
@@ -1044,30 +1057,17 @@ footer {
   </div>
 </section>
 
-<!-- ═══════ Global Startup Edition ═══════ -->
-<section class="rr-global" id="global">
-  <div class="rr-global-inner">
-    <div class="rr-global-cover"><img src="/assets/regen-report-global-cover.png" alt="REGEN Report 2026 上半期｜Global Startup Edition 表紙「ほぼ、電気。」" loading="lazy"></div>
-    <div class="rr-global-tx">
-      <div class="rr-label">2冊目 ｜ Global Startup Edition（2026年9月）</div>
+<!-- ═══════ 海外版への案内 ═══════ -->
+<section class="rr-sister" id="global">
+  <a class="rr-sister-inner" href="/regen-report/global">
+    <div class="rr-sister-cover"><img src="/assets/regen-report-global-cover.png" alt="REGEN Report 2026 上半期｜Global Startup Edition 表紙「ほぼ、電気。」" loading="lazy"></div>
+    <div class="rr-sister-tx">
+      <div class="rr-label">2冊目 ｜ Global Startup Edition（海外版・2026年9月）</div>
       <h2>ほぼ、<em>電気。</em></h2>
-      <p class="lead">同じ半年、海外はどうだったのか。毎朝ひろってきた海外のニュース<b>589件</b>に、国内版と同じ物差しを当てました。人と自然の回復に向かうものは<b>44件・56.8億ドル</b>。その98%が、核融合・原子炉・地熱・蓄電池──<b>電気をつくる会社</b>に流れていました。日本の再生マネーが7本の小川なら、海外は1本の大河。大河の名前は「電気」。</p>
-      <div class="rr-gstats">
-        <div class="s"><div class="v">589<small>件</small></div><div class="k">観測した海外案件</div></div>
-        <div class="s"><div class="v">44<small>件</small></div><div class="k">再生に向かった（7.5%）</div></div>
-        <div class="s"><div class="v">56.8<small>億ドル</small></div><div class="k">判明34件の合計・国内の約44倍</div></div>
-        <div class="s"><div class="v">98<small>%</small></div><div class="k">気候・エネルギーの金額比</div></div>
-      </div>
-      <div class="rr-gtoc">
-        <span><b>01</b>総括 ─ ほぼ、電気。</span><span><b>02</b>REGENマップ ─ 7本の川、1本だけが大河</span>
-        <span><b>03</b>注目10社 ─ 何を回復し、誰が張ったか</span><span><b>04</b>誰が張っているか</span>
-        <span><b>05</b>国別 ─ アメリカの大河、中国の水路</span><span><b>06</b>IPO・ファンド ─ 再生は、海外でも上場した</span>
-        <span><b>07</b>読みどころ ─ 日本の位置</span><span><b>08</b>関わり方／全目録44件／玄人の棚</span>
-      </div>
-      <a class="rr-cta" href="#download">2冊まとめてダウンロードする（無料）</a>
-      <p class="note">全20ページ・A4。原子力（核分裂）を「気候・エネルギー」に含めたこと、脳とつなぐ技術など40件を今号は数えなかったことは、本文の「数え方」で開示しています。</p>
+      <p>同じ半年、海外はどうだったのか。海外のニュース589件に、国内版と同じ物差しを当てました。再生に向かったのは44件・56.8億ドル。その98%が「電気をつくる会社」に。</p>
+      <span class="rr-sister-cta">海外版のページへ（全20ページ・無料）→</span>
     </div>
-  </div>
+  </a>
 </section>
 
 <!-- ═══════ 数え方 ═══════ -->
@@ -1127,10 +1127,11 @@ footer {
   <div class="rr-sec-inner">
     <div class="rr-label">Download</div>
     <h2>資料をダウンロードする。</h2>
-    <p class="rr-dl-note">Startup Edition（18ページ）と Global Startup Edition（20ページ）の2冊・無料。ご記入いただいた方に、PDFをその場でお渡しします。<br><span style="font-size:.78rem">お預かりした個人情報は、資料のご提供とご連絡の目的にのみ使用し、目的外の第三者提供はいたしません。<br>※ フォームの送信処理には外部サービス Formspree（formspree.io）を利用しています。</span></p>
+    <p class="rr-dl-note">Startup Edition（国内版・全18ページ）・無料。ご記入いただいた方に、PDFをその場でお渡しします。海外版（Global Startup Edition）は<a href="/regen-report/global" style="color:var(--gold)">別のページ</a>からどうぞ。<br><span style="font-size:.78rem">お預かりした個人情報は、資料のご提供とご連絡の目的にのみ使用し、目的外の第三者提供はいたしません。<br>※ フォームの送信処理には外部サービス Formspree（formspree.io）を利用しています。</span></p>
 
     <form class="rr-form" id="rrForm" action="https://formspree.io/f/mlgqklwz" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="【REGEN Report DL】資料ダウンロード">
+      <input type="hidden" name="_subject" value="【REGEN Report DL】Startup Edition（国内版）">
+      <input type="hidden" name="edition" value="startup">
       <input type="hidden" name="source" value="regen-report">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
 
@@ -1149,13 +1150,13 @@ footer {
     <div class="rr-success" id="rrSuccess">
       <h3>受け取りました。</h3>
       <p>ありがとうございます。下のボタンから、そのままお持ちください。<br>気になった一社が見つかったら、それがこの目録の成功です。</p>
-      <a class="rr-dl-btn" href="/assets/REGEN_Report_2026H1_Startup_Edition.pdf" target="_blank" rel="noopener">Startup Edition を受け取る（18ページ・約4MB）</a><br>
-      <a class="rr-dl-btn dark" href="/assets/REGEN_Report_2026H1_Global_Startup_Edition.pdf" target="_blank" rel="noopener">Global Startup Edition を受け取る（20ページ・約3MB）</a>
+      <a class="rr-dl-btn" href="/assets/REGEN_Report_2026H1_Startup_Edition.pdf" target="_blank" rel="noopener">Startup Edition を受け取る（18ページ・約4MB）</a>
+      <p style="margin:22px 0 0;font-size:.8rem">海外版「Global Startup Edition」は <a href="/regen-report/global" style="color:var(--gold)">こちらのページ</a> から。</p>
     </div>
   </div>
 </section>
 
-<div class="rr-credit">引用について：本レポートは無料で配布しています。引用の際は「REGEN Report 2026上半期（MQRI）」とご記載ください。<br>発行：一般社団法人 松石量子再生研究所（MQRI）｜編集長：松石圭介｜Startup Edition 2026年7月／Global Startup Edition 2026年9月</div>
+<div class="rr-credit">引用について：本レポートは無料で配布しています。引用の際は「REGEN Report 2026上半期（MQRI）」とご記載ください。<br>発行：一般社団法人 松石量子再生研究所（MQRI）｜編集長：松石圭介｜Startup Edition 2026年7月（海外版 Global Startup Edition は <a href="/regen-report/global" style="color:var(--gold)">/regen-report/global</a>）</div>
 
 <footer>
   <div class="container">
