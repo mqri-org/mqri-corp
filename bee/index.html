@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>八百万の蜂プロジェクト｜MQRI</title>
+<meta name="description" content="一鉢の花から、日本列島のいのちの道へ。花を植えて地図に灯し、蜂が行き来できる道を増やしていくプロジェクトです。いまは九州から始めています。" />
+<meta property="og:title" content="八百万の蜂プロジェクト｜MQRI" />
+<meta property="og:description" content="一鉢の花から、日本列島のいのちの道へ。いまは九州から、順に全国へ。" />
+<meta property="og:type" content="website" />
+<link rel="canonical" href="https://www.mqri.or.jp/bee" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1815;--ink-soft:#3a342e;--ink-mute:#6b6359;--paper:#f4f0e8;--silver:#b8b3a6;--silver-light:#d4cfc0;--line:rgba(26,24,21,.12);--line-soft:rgba(26,24,21,.06);
+  --wall:#fff;--wall-2:#f7f7f5;--ink-2:#55574f;--ink-3:#8b8d84;--hair:rgba(27,28,26,.10);--hair-strong:rgba(27,28,26,.28);
+  --leaf:#3f7f3a;--leaf-soft:#e6f0e2;--honey:#e2a50b;--honey-soft:#fbf0d2;--indigo:#2d3a8c;--indigo-soft:#e5e8f6;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",Inter,-apple-system,"Hiragino Sans",sans-serif;background:var(--wall);color:#1b1c1a;line-height:1.85;-webkit-font-smoothing:antialiased}
+.nav{font-family:"Shippori Mincho","Noto Serif JP","Cormorant Garamond",serif;background:rgba(255,255,255,.86)!important}
+.container{max-width:1240px;margin:0 auto;padding:0 clamp(1.5rem,4vw,3rem);position:relative}
+footer{font-family:"Shippori Mincho","Noto Serif JP",serif}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)}
+main{padding-top:84px}
+section{position:relative}
+h1{font-size:clamp(26px,3.4vw,36px);font-weight:500;line-height:1.45;margin-top:8px;letter-spacing:.01em}
+h2{font-size:clamp(18px,2vw,22px);font-weight:500;line-height:1.5}
+.kick{font-size:12px;color:var(--ink-3)}
+.lead{margin-top:16px;color:var(--ink-2);font-size:15px;max-width:34em}
+p{font-size:14px;color:#333}
+a{color:inherit}
+.link{color:var(--indigo);text-decoration:underline;text-underline-offset:3px;font-size:14px}
+.hero-in{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(24px,4vw,56px)}
+figure{margin:0;position:relative}
+figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:6px}
+figcaption{font-size:11px;color:var(--ink-3);margin-top:6px}
+figcaption a{color:var(--ink-3)}
+.sec{padding:clamp(40px,6vw,72px) 0;border-top:1px solid var(--hair)}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:1px solid var(--hair);border-left:1px solid var(--hair);margin-top:24px}
+.door{display:flex;flex-direction:column;gap:8px;padding:22px 20px;text-decoration:none;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:box-shadow .16s var(--ease),background .16s var(--ease)}
+.door:hover{background:var(--wall-2)}
+.door .v{font-size:12px;font-weight:600;letter-spacing:.1em}
+.d1{box-shadow:inset 0 3px 0 var(--honey)}.d1 .v{color:#8a5d00}
+.d2{box-shadow:inset 0 3px 0 var(--leaf)}.d2 .v{color:var(--leaf)}
+.d3{box-shadow:inset 0 3px 0 var(--indigo)}.d3 .v{color:var(--indigo)}
+.d4{box-shadow:inset 0 3px 0 #cfc9bd}.d4 .v{color:var(--ink-2)}
+.door b{font-size:16px;font-weight:500}
+.door p{font-size:13px;color:var(--ink-2)}
+.door .tag{font-size:11px;color:var(--ink-3);border:1px dashed #b9bbb2;border-radius:4px;padding:2px 6px;align-self:flex-start}
+.door .go{margin-top:auto;padding-top:6px;color:var(--indigo);font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.g2 p{margin-top:14px}
+.dots{width:100%;max-width:420px;display:block}
+.dots .c circle{fill:var(--honey)}.dots .ln{stroke:var(--leaf);fill:none;stroke-width:2}.dots .ar{fill:var(--leaf-soft)}
+.dots text{font-size:12px;text-anchor:middle;fill:var(--ink-3)}
+.tiles{width:100%;max-width:330px;display:block;margin-top:18px}
+.tiles .t{font-size:12px;text-anchor:middle;fill:var(--ink-3)}.tiles .s{font-size:9px;text-anchor:middle;fill:var(--ink-3)}
+.tiles .t.on{fill:#1b1c1a;font-weight:600}.tiles .s.on{fill:#1b1c1a}
+.narrow{max-width:760px}
+.track{list-style:none;margin-top:14px}
+.track li{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:14px}
+.track li span:first-child{color:var(--ink-3)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--indigo);color:#fff;text-decoration:none;border-radius:8px;padding:11px 20px;font-size:14px;font-weight:500;margin-top:18px}
+.btn:hover{opacity:.9}
+a:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+@media (max-width:760px){
+  .hero-in,.g2{grid-template-columns:1fr}
+  .hero-in figure{order:-1}
+  .track li{grid-template-columns:1fr;gap:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.4rem 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(244, 240, 232, 0.78);
+  border-bottom: 1px solid var(--line-soft);
+  transition: all 0.4s ease;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-logo-svg {
+  height: 22px;
+  width: auto;
+  display: block;
+  color: var(--ink);
+}
+
+.nav-menu {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.6rem);
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width 0.35s ease;
+}
+
+.nav-menu a:hover { color: var(--ink); }
+.nav-menu a:hover::after { width: 100%; }
+
+.nav-menu a.nav-cta {
+  padding: 0.7rem 1.6rem;
+  border: 1px solid var(--ink);
+  font-family: "Cormorant Garamond", "Shippori Mincho", serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.nav-menu a.nav-cta:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.nav-menu a.nav-cta::after { display: none; }
+
+@media (max-width: 768px) {
+  .nav-menu li:not(:last-child) { display: none; }
+}
+
+footer {
+  background: var(--ink);
+  color: var(--silver-light);
+  padding: 5rem 0 2rem;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.footer-brand .brand-svg {
+  height: 28px;
+  width: auto;
+  display: block;
+  color: var(--paper);
+  margin-bottom: 1rem;
+}
+
+.footer-brand .ja {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: var(--silver-light);
+  margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 2;
+  color: var(--silver);
+  max-width: 320px;
+}
+
+.footer-col h5 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  color: var(--silver);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.8rem; }
+.footer-col a {
+  color: var(--silver-light);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--paper); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(244, 240, 232, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--silver);
+}
+
+.footer-bottom .copy {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
+
+</style>
+</head>
+<body>
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="MQRI">
+      <svg class="nav-logo-svg" viewBox="0 0 89.91 15.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="currentColor">
+          <path d="M27.72,2.52c.04-.2.11-.31.2-.31s.17.06.32.37l3.25,6.71,3.24-6.8c.1-.19.16-.29.26-.29s.18.12.21.37l1.08,7.36c.11.75.23,1.1.58,1.2.34.11.58.12.74.12.11,0,.19.01.19.08,0,.1-.14.13-.31.13-.3,0-1.94-.04-2.42-.07-.27-.02-.35-.06-.35-.13,0-.06.05-.09.13-.13.07-.02.11-.18.06-.51l-.71-5.24h-.05l-2.59,5.4c-.27.56-.33.67-.44.67s-.23-.24-.42-.59c-.29-.55-1.23-2.37-1.37-2.7-.11-.25-.82-1.75-1.24-2.64h-.05l-.62,4.74c-.02.21-.04.37-.04.56,0,.23.15.33.36.38.21.05.38.06.5.06.1,0,.18.02.18.08,0,.11-.11.13-.29.13-.5,0-1.04-.04-1.25-.04-.23,0-.8.04-1.18.04-.12,0-.21-.02-.21-.13,0-.06.07-.08.19-.08.09,0,.18,0,.36-.04.33-.07.43-.54.49-.94l1.18-7.76Z"/>
+          <path d="M52.48,11.32c-.48.18-1.24.31-1.87.31-3.49,0-4.84-2.58-4.84-4.72,0-1.94,1.39-4.61,4.88-4.61,2.84,0,4.82,1.73,4.82,4.51,0,2.09-1.32,3.42-2.07,3.92l2.39,1.23c2.51,1.29,4.09,1.42,4.9,1.42.62,0,1.5-.1,2.32-.42.07-.02.13-.06.18-.06.06,0,.11.05.11.11,0,.07-.06.11-.14.14-.71.34-2.06.89-3.77.89-1.8,0-3.07-.46-5.03-1.62l-1.87-1.1ZM53.8,7.13c0-2.88-1.79-4.26-3.43-4.26s-2.95,1-2.95,3.76,1.71,4.4,3.63,4.4c.95,0,2.75-.42,2.75-3.9Z"/>
+          <path d="M67.89,5.92c0-1.81,0-2.14-.02-2.52-.02-.4-.12-.59-.51-.68-.09-.02-.3-.04-.46-.04-.13,0-.2-.02-.2-.11s.08-.11.26-.11c.63,0,1.38.04,1.63.04.4,0,1.31-.04,1.68-.04.75,0,1.55.07,2.19.51.33.23.81.83.81,1.63,0,.88-.37,1.69-1.57,2.67,1.06,1.33,1.88,2.39,2.58,3.13.67.69,1.15.77,1.33.81.13.02.24.04.33.04s.14.04.14.1c0,.09-.08.12-.23.12h-1.13c-.67,0-.96-.06-1.27-.23-.51-.27-.96-.83-1.63-1.75-.48-.65-1.02-1.46-1.18-1.64-.06-.07-.13-.08-.21-.08l-1.04-.02c-.06,0-.09.02-.09.09v.17c0,1.11,0,2.05.06,2.55.04.35.11.61.46.65.18.02.44.05.58.05.1,0,.14.04.14.1,0,.08-.08.12-.24.12-.69,0-1.57-.04-1.75-.04-.23,0-.98.04-1.45.04-.15,0-.24-.04-.24-.12,0-.06.05-.1.19-.1.18,0,.32-.02.43-.05.24-.05.3-.31.35-.65.06-.5.06-1.44.06-2.54v-2.09ZM69.3,6.86c0,.13.02.18.11.21.25.08.61.12.9.12.48,0,.63-.05.84-.2.36-.26.7-.81.7-1.79,0-1.69-1.12-2.18-1.82-2.18-.3,0-.51.01-.63.05-.08.02-.11.07-.11.17v3.62Z"/>
+          <path d="M87.11,5.92c0-1.81,0-2.14-.02-2.52-.02-.4-.14-.61-.4-.67-.13-.04-.29-.05-.43-.05-.12,0-.19-.02-.19-.12,0-.07.1-.09.29-.09.45,0,1.2.04,1.55.04.3,0,1-.04,1.45-.04.15,0,.25.02.25.09,0,.1-.07.12-.19.12s-.21.01-.36.04c-.32.06-.42.26-.44.68-.02.38-.02.71-.02,2.52v2.09c0,1.15,0,2.09.05,2.61.04.32.12.54.48.58.17.02.43.05.61.05.13,0,.19.04.19.1,0,.08-.1.12-.23.12-.79,0-1.54-.04-1.86-.04-.27,0-1.02.04-1.5.04-.15,0-.24-.04-.24-.12,0-.06.05-.1.19-.1.18,0,.32-.02.43-.05.24-.05.31-.25.35-.59.06-.5.06-1.44.06-2.59v-2.09Z"/>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.78">
+          <path d="M11.43,4.07c0,2.03-1.65,3.68-3.68,3.68,0-2.03-1.65-3.68-3.68-3.68S.44,5.67.39,7.66C.44,3.67,3.67.44,7.65.39c.03,0,.06,0,.09,0s.06,0,.09,0c1.99.05,3.59,1.68,3.59,3.68Z"/>
+          <path d="M15.11,7.85c-.05,3.99-3.27,7.21-7.26,7.26-.03,0-.06,0-.09,0s-.06,0-.09,0c-1.99-.05-3.59-1.68-3.59-3.68s1.65-3.68,3.68-3.68c0,2.03,1.65,3.68,3.68,3.68s3.63-1.6,3.68-3.59Z"/>
+          <path d="M7.65,15.11c-3.99-.05-7.21-3.27-7.26-7.26,0-.03,0-.06,0-.09s0-.06,0-.09c.05-1.99,1.68-3.59,3.68-3.59s3.68,1.65,3.68,3.68c-2.03,0-3.68,1.65-3.68,3.68s1.6,3.63,3.59,3.68Z"/>
+          <path d="M15.11,7.75s0,.06,0,.09c-.05,1.99-1.68,3.59-3.68,3.59s-3.68-1.65-3.68-3.68c2.03,0,3.68-1.65,3.68-3.68S9.83.44,7.84.39c3.99.05,7.21,3.27,7.26,7.26,0,.03,0,.06,0,.09Z"/>
+        </g>
+      </svg>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="/#about">ABOUT</a></li>
+      <li><a href="/news/">NEWS</a></li>
+      <li><a href="/#business">BUSINESS</a></li>
+      <li><a href="/#projects">PROJECTS</a></li>
+      <li><a href="/regen-report">REPORT</a></li>
+      <li><a href="/#organization">ORGANIZATION</a></li>
+      <li><a href="/contact" class="nav-cta">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<section data-s="S1-HERO"><div class="wrap hero-in">
+  <div><div class="kick">MQRI ／ 八百万の蜂プロジェクト</div>
+  <h1>一鉢の花から、<br>日本列島のいのちの道へ。</h1>
+  <p class="lead">ベランダの一鉢、庭の花壇、学校や神社の片すみ。花が点のように増えていくと、蜂が行き来できる道になっていきます。八百万の蜂プロジェクトは、その道を日本列島に広げていく取り組みです。いまは九州から始めています。</p></div>
+  <figure><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Cirsium_japonicum_1.JPG/960px-Cirsium_japonicum_1.JPG" alt="ノアザミの花にとまるチョウ" width="960" height="720"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Cirsium_japonicum_1.JPG" target="_blank" rel="noopener">写真：Qwert1234（CC BY-SA 4.0）</a></figcaption></figure>
+</div></section>
+
+<section class="sec" data-s="S2-DOORS"><div class="wrap">
+  <h2>今日からできることは、3つあります</h2>
+  <div class="doors"><a class="door d1" href="https://beemap.mqri.or.jp" target="_blank" rel="noopener"><span class="v">灯す</span><b>BeeMap</b><p>植えた花、咲いた花を地図に灯します。近くの花とつながると、蜂の通り道が見えてきます。</p><span class="go">BeeMapを開く →</span></a><a class="door d2" href="/bee/hana/"><span class="v">選ぶ</span><b>蜂がくる花の図鑑</b><p>どの花を、どんな土に、いつ植えればいいか。住んでいる地域の在来の花から選べます（いまは九州。ほかの地域も順に加えていきます）。</p><span class="tag">植物の専門家に確認していただいているところです</span><span class="go">図鑑を開く →</span></a><a class="door d4" href="/regen-day"><span class="v">会う</span><b>REGEN DAY</b><p>花と蜂、土と微生物のつながりを、お話と体験で味わうイベントです。</p><span class="go">次回のご案内（10月3日・志賀島） →</span></a></div>
+</div></section>
+
+<section class="sec" data-s="S3-WHAT"><div class="wrap g2">
+  <div><h2>花の点をつないで、<br>蜂が行き来できる道にする</h2>
+  <p>蜂が飛べる距離には限りがあります。花と花のあいだが離れすぎていると、蜂はそこを渡れません。一つひとつの花を地図に灯していくと、どこがつながっていて、どこが途切れているかが見えてきます。途切れているところに花を足していく。その積み重ねで、点が線になり、線が面になっていきます。</p></div>
+  <div><svg viewBox="0 0 420 140" class="dots" role="img" aria-label="一鉢から点、線、面へ"><g class="c"><circle cx="40" cy="70" r="7"/><circle cx="120" cy="55" r="5"/><circle cx="140" cy="85" r="5"/><circle cx="160" cy="50" r="5"/></g><path d="M205 85 L235 65 L262 75 L292 53" class="ln"/><g class="c"><circle cx="205" cy="85" r="5"/><circle cx="235" cy="65" r="5"/><circle cx="262" cy="75" r="5"/><circle cx="292" cy="53" r="5"/></g><rect x="326" y="36" width="78" height="64" rx="4" class="ar"/><g class="c"><circle cx="338" cy="50" r="4"/><circle cx="338" cy="70" r="4"/><circle cx="338" cy="92" r="4"/><circle cx="360" cy="50" r="4"/><circle cx="360" cy="70" r="4"/><circle cx="360" cy="92" r="4"/><circle cx="382" cy="50" r="4"/><circle cx="382" cy="70" r="4"/><circle cx="382" cy="92" r="4"/><circle cx="396" cy="50" r="4"/><circle cx="396" cy="70" r="4"/><circle cx="396" cy="92" r="4"/></g><text x="40" y="126">一鉢</text><text x="140" y="126">点</text><text x="248" y="126">線</text><text x="365" y="126">面</text></svg><svg viewBox="0 0 360 300" class="tiles" role="img" aria-label="日本列島の9地域。いまは九州から、ほかの地域は準備中"><rect x="300.5" y="0.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="327.0" y="25.0" class="t">北海道</text><text x="327.0" y="40.0" class="s">準備中</text><rect x="300.5" y="60.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="327.0" y="85.0" class="t">東北</text><text x="327.0" y="100.0" class="s">準備中</text><rect x="300.5" y="120.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="327.0" y="145.0" class="t">関東</text><text x="327.0" y="160.0" class="s">準備中</text><rect x="240.5" y="120.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="267.0" y="145.0" class="t">中部</text><text x="267.0" y="160.0" class="s">準備中</text><rect x="180.5" y="120.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="207.0" y="145.0" class="t">近畿</text><text x="207.0" y="160.0" class="s">準備中</text><rect x="120.5" y="120.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="147.0" y="145.0" class="t">中国</text><text x="147.0" y="160.0" class="s">準備中</text><rect x="120.5" y="180.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="147.0" y="205.0" class="t">四国</text><text x="147.0" y="220.0" class="s">準備中</text><rect x="60" y="180" width="54" height="54" rx="6" fill="var(--honey)"/><text x="87.0" y="205.0" class="t on">九州</text><text x="87.0" y="220.0" class="s on">いまここから</text><rect x="0.5" y="240.5" width="53" height="53" rx="6" fill="none" stroke="var(--hair-strong)" stroke-dasharray="3 3"/><text x="27.0" y="265.0" class="t">沖縄</text><text x="27.0" y="280.0" class="s">準備中</text></svg><p class="kick" style="margin-top:6px">日本列島の9地域。いまは九州から、順に加えていきます。</p></div>
+</div></section>
+
+<section class="sec" data-s="S4-WHY"><div class="wrap narrow">
+  <h2>花ならなんでもいい、わけではありません</h2>
+  <p style="margin-top:14px">お店で「蜂や蝶が集まる」と売られている花の中には、国の外来種リストに載っている花もあります。このプロジェクトでは、その土地にもとからある在来の花を中心に選び、薬に頼らない育て方をおすすめしています。</p>
+  <p style="margin-top:14px"><a class="link" href="/bee/hana/#/saketai">避けたい花と、代わりの花を見る</a></p>
+</div></section>
+
+<section class="sec" data-s="S5-TRACK"><div class="wrap narrow">
+  <h2>これまでの歩み</h2>
+  <ul class="track">
+    <li><span>2026年5月20日</span><span>世界ミツバチの日に、福岡から始まりました</span></li>
+    <li><span>2026年7月13日</span><span>REGEN DAY 01 FUKUOKA（警固神社）</span></li>
+    <li><span>2026年10月3日</span><span>REGEN DAY 02（志賀島）</span></li>
+    <li><span>報道</span><span>日経新聞・毎日新聞・西日本新聞・宮崎日日新聞・小倉経済新聞・coki（2026年5月）　<a class="link" href="/news/2026-05-20-yaorozu-bee-press">掲載一覧</a></span></li>
+  </ul>
+</div></section>
+
+<section class="sec" data-s="S6-JOIN"><div class="wrap g2">
+  <div><h2>場所をお持ちの方へ</h2>
+  <p>企業の敷地、自治体の公園、学校、神社、農地。場所をお持ちの方と一緒に、花を増やしていきたいと考えています。地域やどのくらいの広さからでも、まずはご相談ください。</p>
+  <a class="btn" href="/contact">相談する</a></div>
+  <figure><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Flowers_of_Farfugium_japonicum_in_Kora_Grand_Shrine.jpg/960px-Flowers_of_Farfugium_japonicum_in_Kora_Grand_Shrine.jpg" alt="高良大社（福岡県久留米市）に咲くツワブキ" width="960" height="720"><figcaption>高良大社（福岡県久留米市）に咲くツワブキ　<a href="https://commons.wikimedia.org/wiki/File:Flowers_of_Farfugium_japonicum_in_Kora_Grand_Shrine.jpg" target="_blank" rel="noopener">写真：そらみみ（CC BY-SA 4.0）</a></figcaption></figure>
+</div></section>
+
+<section class="sec" data-s="S7-ABOUT"><div class="wrap narrow">
+  <h2>運営</h2>
+  <p style="margin-top:14px">一般社団法人 松石量子再生研究所（MQRI）が運営しています。福岡県糸島市を拠点に、自然環境と地域のつながりを調べ、形にする活動をしています。</p>
+  <p style="margin-top:14px"><a class="link" href="/#about">MQRIについて</a>　<a class="link" href="/contact">お問い合わせ</a></p>
+</div></section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="brand-svg" viewBox="0 0 89.91 15.5" xmlns="http://www.w3.org/2000/svg" aria-label="MQRI">
+          <g fill="currentColor">
+            <path d="M27.72,2.52c.04-.2.11-.31.2-.31s.17.06.32.37l3.25,6.71,3.24-6.8c.1-.19.16-.29.26-.29s.18.12.21.37l1.08,7.36c.11.75.23,1.1.58,1.2.34.11.58.12.74.12.11,0,.19.01.19.08,0,.1-.14.13-.31.13-.3,0-1.94-.04-2.42-.07-.27-.02-.35-.06-.35-.13,0-.06.05-.09.13-.13.07-.02.11-.18.06-.51l-.71-5.24h-.05l-2.59,5.4c-.27.56-.33.67-.44.67s-.23-.24-.42-.59c-.29-.55-1.23-2.37-1.37-2.7-.11-.25-.82-1.75-1.24-2.64h-.05l-.62,4.74c-.02.21-.04.37-.04.56,0,.23.15.33.36.38.21.05.38.06.5.06.1,0,.18.02.18.08,0,.11-.11.13-.29.13-.5,0-1.04-.04-1.25-.04-.23,0-.8.04-1.18.04-.12,0-.21-.02-.21-.13,0-.06.07-.08.19-.08.09,0,.18,0,.36-.04.33-.07.43-.54.49-.94l1.18-7.76Z"/>
+            <path d="M52.48,11.32c-.48.18-1.24.31-1.87.31-3.49,0-4.84-2.58-4.84-4.72,0-1.94,1.39-4.61,4.88-4.61,2.84,0,4.82,1.73,4.82,4.51,0,2.09-1.32,3.42-2.07,3.92l2.39,1.23c2.51,1.29,4.09,1.42,4.9,1.42.62,0,1.5-.1,2.32-.42.07-.02.13-.06.18-.06.06,0,.11.05.11.11,0,.07-.06.11-.14.14-.71.34-2.06.89-3.77.89-1.8,0-3.07-.46-5.03-1.62l-1.87-1.1ZM53.8,7.13c0-2.88-1.79-4.26-3.43-4.26s-2.95,1-2.95,3.76,1.71,4.4,3.63,4.4c.95,0,2.75-.42,2.75-3.9Z"/>
+            <path d="M67.89,5.92c0-1.81,0-2.14-.02-2.52-.02-.4-.12-.59-.51-.68-.09-.02-.3-.04-.46-.04-.13,0-.2-.02-.2-.11s.08-.11.26-.11c.63,0,1.38.04,1.63.04.4,0,1.31-.04,1.68-.04.75,0,1.55.07,2.19.51.33.23.81.83.81,1.63,0,.88-.37,1.69-1.57,2.67,1.06,1.33,1.88,2.39,2.58,3.13.67.69,1.15.77,1.33.81.13.02.24.04.33.04s.14.04.14.1c0,.09-.08.12-.23.12h-1.13c-.67,0-.96-.06-1.27-.23-.51-.27-.96-.83-1.63-1.75-.48-.65-1.02-1.46-1.18-1.64-.06-.07-.13-.08-.21-.08l-1.04-.02c-.06,0-.09.02-.09.09v.17c0,1.11,0,2.05.06,2.55.04.35.11.61.46.65.18.02.44.05.58.05.1,0,.14.04.14.1,0,.08-.08.12-.24.12-.69,0-1.57-.04-1.75-.04-.23,0-.98.04-1.45.04-.15,0-.24-.04-.24-.12,0-.06.05-.1.19-.1.18,0,.32-.02.43-.05.24-.05.3-.31.35-.65.06-.5.06-1.44.06-2.54v-2.09ZM69.3,6.86c0,.13.02.18.11.21.25.08.61.12.9.12.48,0,.63-.05.84-.2.36-.26.7-.81.7-1.79,0-1.69-1.12-2.18-1.82-2.18-.3,0-.51.01-.63.05-.08.02-.11.07-.11.17v3.62Z"/>
+            <path d="M87.11,5.92c0-1.81,0-2.14-.02-2.52-.02-.4-.14-.61-.4-.67-.13-.04-.29-.05-.43-.05-.12,0-.19-.02-.19-.12,0-.07.1-.09.29-.09.45,0,1.2.04,1.55.04.3,0,1-.04,1.45-.04.15,0,.25.02.25.09,0,.1-.07.12-.19.12s-.21.01-.36.04c-.32.06-.42.26-.44.68-.02.38-.02.71-.02,2.52v2.09c0,1.15,0,2.09.05,2.61.04.32.12.54.48.58.17.02.43.05.61.05.13,0,.19.04.19.1,0,.08-.1.12-.23.12-.79,0-1.54-.04-1.86-.04-.27,0-1.02.04-1.5.04-.15,0-.24-.04-.24-.12,0-.06.05-.1.19-.1.18,0,.32-.02.43-.05.24-.05.31-.25.35-.59.06-.5.06-1.44.06-2.59v-2.09Z"/>
+          </g>
+          <g fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.78">
+            <path d="M11.43,4.07c0,2.03-1.65,3.68-3.68,3.68,0-2.03-1.65-3.68-3.68-3.68S.44,5.67.39,7.66C.44,3.67,3.67.44,7.65.39c.03,0,.06,0,.09,0s.06,0,.09,0c1.99.05,3.59,1.68,3.59,3.68Z"/>
+            <path d="M15.11,7.85c-.05,3.99-3.27,7.21-7.26,7.26-.03,0-.06,0-.09,0s-.06,0-.09,0c-1.99-.05-3.59-1.68-3.59-3.68s1.65-3.68,3.68-3.68c0,2.03,1.65,3.68,3.68,3.68s3.63-1.6,3.68-3.59Z"/>
+            <path d="M7.65,15.11c-3.99-.05-7.21-3.27-7.26-7.26,0-.03,0-.06,0-.09s0-.06,0-.09c.05-1.99,1.68-3.59,3.68-3.59s3.68,1.65,3.68,3.68c-2.03,0-3.68,1.65-3.68,3.68s1.6,3.63,3.59,3.68Z"/>
+            <path d="M15.11,7.75s0,.06,0,.09c-.05,1.99-1.68,3.59-3.68,3.59s-3.68-1.65-3.68-3.68c2.03,0,3.68-1.65,3.68-3.68S9.83.44,7.84.39c3.99.05,7.21,3.27,7.26,7.26,0,.03,0,.06,0,.09Z"/>
+          </g>
+        </svg>
+        <div class="ja">一般社団法人 松石量子再生研究所</div>
+        <p>福岡県糸島市を拠点に、自然環境、地域共創、ウェルビーイング、AI活用に関する調査研究、企画運営、情報発信を行う一般社団法人です。</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Site</h5>
+        <ul>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/news/">News</a></li>
+          <li><a href="/#business">Business</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/regen-report">Report</a></li>
+          <li><a href="/#organization">Organization</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Projects</h5>
+        <ul>
+          <li><a href="/#projects">REGEN</a></li>
+          <li><a href="/bee">八百万の蜂プロジェクト</a></li>
+          <li><a href="/#projects">ABC</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>一般社団法人 松石量子再生研究所 ／ 福岡県糸島市</p>
+      <p class="copy">© 2026 Matsuishi Quantum Regeneration Institute. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
