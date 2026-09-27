@@ -8,5 +8,15 @@
       "destination": "/regen-day/2026-10-03",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/bee/hana",
+      "destination": "https://hachi-hana-zukan.vercel.app/bee/hana"
+    },
+    {
+      "source": "/bee/hana/:path*",
+      "destination": "https://hachi-hana-zukan.vercel.app/bee/hana/:path*"
+    }
   ]
 }
